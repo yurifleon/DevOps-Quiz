@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "DevOps Quiz Application",
   "scripts": {
-    "start": "npx serve -s . -l $PORT -e index.html=quiz.html"
+    "start": "npx serve -s . -l $PORT"
   },
   "engines": {
     "node": "18.x"
