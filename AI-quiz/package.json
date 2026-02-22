@@ -6,6 +6,6 @@
     "start": "npx serve -s . -l $PORT"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": "18.x"
   }
 }
