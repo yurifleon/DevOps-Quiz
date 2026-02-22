@@ -1,0 +1,3 @@
+# Python dependencies (not used - frontend only)
+# This file satisfies Render's Python detection
+gunicorn>=20.0.0
