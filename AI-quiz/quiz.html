@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Quiz</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            height: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: #00d9ff;
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .category-tag {
+            display: inline-block;
+            background: #e0f7fa;
+            color: #006064;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .difficulty {
+            float: right;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .difficulty.easy {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+
+        .difficulty.medium {
+            background: #ffe0b2;
+            color: #ef6c00;
+        }
+
+        .difficulty.hard {
+            background: #ffcdd2;
+            color: #c62828;
+        }
+
+        .question {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 1rem;
+        }
+
+        .option:hover {
+            border-color: #00d9ff;
+            background: #f0faff;
+        }
+
+        .option.selected {
+            border-color: #00d9ff;
+            background: #e0f7fa;
+        }
+
+        .option.correct {
+            border-color: #4caf50;
+            background: #e8f5e9;
+        }
+
+        .option.incorrect {
+            border-color: #f44336;
+            background: #ffebee;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 16px;
+            margin-top: 25px;
+            background: #00d9ff;
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #00b8d4;
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .explanation {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff8e1;
+            border-radius: 10px;
+            border-left: 4px solid #ffc107;
+            display: none;
+        }
+
+        .explanation.show {
+            display: block;
+        }
+
+        .explanation-title {
+            font-weight: 600;
+            color: #f57c00;
+            margin-bottom: 5px;
+        }
+
+        .results {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .results h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .score {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #00d9ff;
+            margin-bottom: 10px;
+        }
+
+        .score-text {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .start-screen {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .start-screen h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .start-screen p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .filters {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .filter-select {
+            padding: 10px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: #fff;
+            cursor: pointer;
+        }
+
+        .true-false-options {
+            display: flex;
+            gap: 15px;
+        }
+
+        .true-false-options .option {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>DevOps Quiz</h1>
+        </div>
+
+        <div id="start-screen" class="card start-screen">
+            <h2>Welcome!</h2>
+            <p>Test your DevOps knowledge with these questions</p>
+            <p id="question-count" style="color: #666; margin-bottom: 20px;"></p>
+            
+            <div class="filters">
+                <select id="category-filter" class="filter-select">
+                    <option value="all">All Categories</option>
+                </select>
+                <select id="difficulty-filter" class="filter-select">
+                    <option value="all">All Difficulties</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            
+            <button class="btn" onclick="startQuiz()">Start Quiz</button>
+        </div>
+
+        <div id="quiz-screen" class="card hidden">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress"></div>
+            </div>
+            
+            <span class="category-tag" id="category"></span>
+            <span class="difficulty" id="difficulty"></span>
+            
+            <h2 class="question" id="question"></h2>
+            
+            <div class="options" id="options"></div>
+            
+            <button class="btn" id="submit-btn" onclick="submitAnswer()" disabled>Submit Answer</button>
+            
+            <div class="explanation" id="explanation">
+                <div class="explanation-title">Explanation:</div>
+                <div id="explanation-text"></div>
+            </div>
+            
+            <button class="btn hidden" id="next-btn" onclick="nextQuestion()">Next Question</button>
+        </div>
+
+        <div id="results-screen" class="card hidden">
+            <div class="results">
+                <h2>Quiz Complete!</h2>
+                <div class="score" id="score"></div>
+                <div class="score-text">points</div>
+                
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-value" id="correct-count" style="color: #4caf50;"></div>
+                        <div class="stat-label">Correct</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="incorrect-count" style="color: #f44336;"></div>
+                        <div class="stat-label">Incorrect</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="skipped-count" style="color: #ff9800;"></div>
+                        <div class="stat-label">Skipped</div>
+                    </div>
+                </div>
+                
+                <button class="btn" onclick="restartQuiz()">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let allQuestions = [];
+        let filteredQuestions = [];
+        let currentQuestion = 0;
+        let score = 0;
+        let correct = 0;
+        let incorrect = 0;
+        let skipped = 0;
+        let selectedAnswer = null;
+        let answered = false;
+
+        async function loadQuestions() {
+            const response = await fetch('devops_questions.json');
+            allQuestions = await response.json();
+            populateCategoryFilter();
+        }
+
+        function populateCategoryFilter() {
+            const categories = [...new Set(allQuestions.map(q => q.category))];
+            const select = document.getElementById('category-filter');
+            categories.forEach(cat => {
+                const option = document.createElement('option');
+                option.value = cat;
+                option.textContent = cat;
+                select.appendChild(option);
+            });
+            
+            document.getElementById('category-filter').addEventListener('change', updateQuestionCount);
+            document.getElementById('difficulty-filter').addEventListener('change', updateQuestionCount);
+            updateQuestionCount();
+        }
+
+        function updateQuestionCount() {
+            const category = document.getElementById('category-filter').value;
+            const difficulty = document.getElementById('difficulty-filter').value;
+            
+            let pool = allQuestions.filter(q => {
+                const catMatch = category === 'all' || q.category === category;
+                const diffMatch = difficulty === 'all' || q.difficulty === difficulty;
+                return catMatch && diffMatch;
+            });
+            
+            const count = pool.length <= QUESTIONS_PER_SESSION ? pool.length : QUESTIONS_PER_SESSION;
+            document.getElementById('question-count').textContent = `${count} questions per session`;
+        }
+
+        function filterQuestions() {
+            const category = document.getElementById('category-filter').value;
+            const difficulty = document.getElementById('difficulty-filter').value;
+            
+            let pool = allQuestions.filter(q => {
+                const catMatch = category === 'all' || q.category === category;
+                const diffMatch = difficulty === 'all' || q.difficulty === difficulty;
+                return catMatch && diffMatch;
+            });
+            
+            if (pool.length <= QUESTIONS_PER_SESSION) {
+                filteredQuestions = pool;
+            } else {
+                const shuffled = pool.sort(() => Math.random() - 0.5);
+                filteredQuestions = shuffled.slice(0, QUESTIONS_PER_SESSION);
+            }
+        }
+
+        function startQuiz() {
+            filterQuestions();
+            if (filteredQuestions.length === 0) {
+                alert('No questions match the selected filters');
+                return;
+            }
+            
+            currentQuestion = 0;
+            score = 0;
+            correct = 0;
+            incorrect = 0;
+            skipped = 0;
+            
+            document.getElementById('start-screen').classList.add('hidden');
+            document.getElementById('quiz-screen').classList.remove('hidden');
+            document.getElementById('results-screen').classList.add('hidden');
+            
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const q = filteredQuestions[currentQuestion];
+            answered = false;
+            selectedAnswer = null;
+            
+            document.getElementById('progress').style.width = `${((currentQuestion + 1) / filteredQuestions.length) * 100}%`;
+            document.getElementById('category').textContent = q.category;
+            document.getElementById('difficulty').textContent = q.difficulty;
+            document.getElementById('difficulty').className = `difficulty ${q.difficulty}`;
+            document.getElementById('question').textContent = q.question;
+            
+            const optionsContainer = document.getElementById('options');
+            optionsContainer.innerHTML = '';
+            
+            if (q.type === 'true_false') {
+                const trueFalse = ['True', 'False'];
+                trueFalse.forEach(opt => {
+                    const div = document.createElement('div');
+                    div.className = 'option';
+                    div.textContent = opt;
+                    div.onclick = () => selectOption(div, opt);
+                    optionsContainer.appendChild(div);
+                });
+            } else {
+                q.options.forEach(opt => {
+                    const div = document.createElement('div');
+                    div.className = 'option';
+                    div.textContent = opt;
+                    div.onclick = () => selectOption(div, opt);
+                    optionsContainer.appendChild(div);
+                });
+            }
+            
+            document.getElementById('submit-btn').disabled = true;
+            document.getElementById('submit-btn').classList.remove('hidden');
+            document.getElementById('next-btn').classList.add('hidden');
+            document.getElementById('explanation').classList.remove('show');
+        }
+
+        function selectOption(element, value) {
+            if (answered) return;
+            
+            document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+            selectedAnswer = value;
+            document.getElementById('submit-btn').disabled = false;
+        }
+
+        function submitAnswer() {
+            if (!selectedAnswer || answered) return;
+            
+            answered = true;
+            const q = filteredQuestions[currentQuestion];
+            const isCorrect = selectedAnswer.toLowerCase() === q.answer.toLowerCase();
+            
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.style.pointerEvents = 'none';
+                if (q.type === 'true_false') {
+                    if ((isCorrect && opt.textContent === selectedAnswer) ||
+                        (!isCorrect && opt.textContent === q.answer)) {
+                        opt.classList.add('correct');
+                    } else if (opt.textContent === selectedAnswer && !isCorrect) {
+                        opt.classList.add('incorrect');
+                    }
+                } else {
+                    if (opt.textContent === q.answer) {
+                        opt.classList.add('correct');
+                    } else if (opt.textContent === selectedAnswer && !isCorrect) {
+                        opt.classList.add('incorrect');
+                    }
+                }
+            });
+            
+            if (isCorrect) {
+                score += 10;
+                correct++;
+            } else {
+                incorrect++;
+            }
+            
+            document.getElementById('explanation-text').textContent = q.explanation;
+            document.getElementById('explanation').classList.add('show');
+            document.getElementById('submit-btn').classList.add('hidden');
+            document.getElementById('next-btn').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion >= filteredQuestions.length) {
+                showResults();
+            } else {
+                showQuestion();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-screen').classList.add('hidden');
+            document.getElementById('results-screen').classList.remove('hidden');
+            
+            document.getElementById('score').textContent = score;
+            document.getElementById('correct-count').textContent = correct;
+            document.getElementById('incorrect-count').textContent = incorrect;
+            document.getElementById('skipped-count').textContent = skipped;
+        }
+
+        function restartQuiz() {
+            document.getElementById('results-screen').classList.add('hidden');
+            document.getElementById('start-screen').classList.remove('hidden');
+        }
+
+        loadQuestions();
+    </script>
+</body>
+</html>
