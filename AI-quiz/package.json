@@ -1,0 +1,11 @@
+{
+  "name": "devops-quiz",
+  "version": "1.0.0",
+  "description": "DevOps Quiz Application",
+  "scripts": {
+    "start": "npx serve -s . -l $PORT"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
