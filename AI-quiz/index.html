@@ -291,7 +291,7 @@
                 </select>
             </div>
             
-            <button class="btn" onclick="startQuiz()">Start Quiz</button>
+            <button class="btn" id="start-btn" onclick="startQuiz()" disabled>Loading...</button>
         </div>
 
         <div id="quiz-screen" class="card hidden">
@@ -354,9 +354,17 @@
         let answered = false;
 
         async function loadQuestions() {
-            const response = await fetch('devops_questions.json');
-            allQuestions = await response.json();
-            populateCategoryFilter();
+            try {
+                const response = await fetch('devops_questions.json');
+                if (!response.ok) throw new Error('Failed to load questions');
+                allQuestions = await response.json();
+                populateCategoryFilter();
+                document.getElementById('start-btn').disabled = false;
+                document.getElementById('start-btn').textContent = 'Start Quiz';
+            } catch (error) {
+                console.error('Error loading questions:', error);
+                document.querySelector('.start-screen p').textContent = 'Error loading questions. Please refresh.';
+            }
         }
 
         function populateCategoryFilter() {
@@ -407,6 +415,10 @@
         }
 
         function startQuiz() {
+            if (allQuestions.length === 0) {
+                alert('Questions not loaded yet. Please wait or refresh.');
+                return;
+            }
             filterQuestions();
             if (filteredQuestions.length === 0) {
                 alert('No questions match the selected filters');
