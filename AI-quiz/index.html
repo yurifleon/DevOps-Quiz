@@ -355,15 +355,18 @@
 
         async function loadQuestions() {
             try {
-                const response = await fetch('devops_questions.json');
-                if (!response.ok) throw new Error('Failed to load questions');
+                const response = await fetch('./devops_questions.json');
+                if (!response.ok) {
+                    throw new Error('HTTP ' + response.status);
+                }
                 allQuestions = await response.json();
                 populateCategoryFilter();
                 document.getElementById('start-btn').disabled = false;
                 document.getElementById('start-btn').textContent = 'Start Quiz';
             } catch (error) {
                 console.error('Error loading questions:', error);
-                document.querySelector('.start-screen p').textContent = 'Error loading questions. Please refresh.';
+                document.getElementById('start-btn').textContent = 'Error - Check console';
+                document.querySelector('.start-screen p').textContent = 'Error: ' + error.message;
             }
         }
 
