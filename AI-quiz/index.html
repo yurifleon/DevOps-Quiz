@@ -341,8 +341,11 @@
         </div>
 
         <div id="quiz-screen" class="card hidden">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progress"></div>
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:0;">
+                <div class="progress-bar" style="flex:1;margin-bottom:0;">
+                    <div class="progress-fill" id="progress"></div>
+                </div>
+                <span id="progress-label" style="font-size:0.85rem;color:#666;white-space:nowrap;"></span>
             </div>
             
             <span class="category-tag" id="category"></span>
@@ -531,6 +534,7 @@
             isMultiSelect = q.type === 'multi_select';
 
             document.getElementById('progress').style.width = `${((currentQuestion + 1) / filteredQuestions.length) * 100}%`;
+            document.getElementById('progress-label').textContent = `${currentQuestion + 1} / ${filteredQuestions.length}`;
             document.getElementById('category').textContent = q.category;
             document.getElementById('difficulty').textContent = q.difficulty;
             document.getElementById('difficulty').className = `difficulty ${q.difficulty}`;
