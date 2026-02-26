@@ -3738,7 +3738,7 @@
       "Performance testing"
     ],
     "answer": "Creating simulated objects for testing",
-    "explanation": "Mocking replaces dependencies with controlled test doubles."
+    "explanation": "Mocking replaces real dependencies (APIs, databases, services) with controlled fake objects that return predictable responses. This isolates the unit under test, speeds up test execution, and avoids side effects. Mocks differ from stubs (which only return values) and spies (which record calls without replacing behaviour)."
   },
   {
     "id": 258,
