@@ -118,7 +118,7 @@
     "category": "Kubernetes",
     "difficulty": "medium",
     "type": "mcq",
-    "question": "Which Kubernetes object ensures a specified number of pods are running?",
+    "question": "Which Kubernetes object manages rolling updates and rollbacks for pods?",
     "options": [
       "Service",
       "Pod",
@@ -126,7 +126,7 @@
       "Node"
     ],
     "answer": "Deployment",
-    "explanation": "Deployments manage replicas."
+    "explanation": "A Deployment manages rolling updates, rollbacks, and desired replica count via a ReplicaSet. A ReplicaSet alone only maintains replica count without update strategies."
   },
   {
     "id": 10,
@@ -202,7 +202,7 @@
     "category": "Linux",
     "difficulty": "easy",
     "type": "mcq",
-    "question": "What command shows disk space usage?",
+    "question": "Which command shows available disk space on mounted filesystems?",
     "options": [
       "df",
       "du",
@@ -210,7 +210,7 @@
       "mount"
     ],
     "answer": "df",
-    "explanation": "df displays disk space usage for mounted filesystems."
+    "explanation": "df reports disk space usage for mounted filesystems. du reports space used by individual files and directories."
   },
   {
     "id": 16,
@@ -288,7 +288,7 @@
     "type": "mcq",
     "question": "What does MFA stand for?",
     "options": [
-      "Multiple Factor Authentication",
+      "Managed File Access",
       "Multi-Factor Authentication",
       "Main Factor Authorization",
       "Managed Firewall Access"
@@ -690,7 +690,7 @@
       "docker.conf"
     ],
     "answer": "docker-compose.yml",
-    "explanation": "docker-compose.yml defines multi-container services for Docker applications."
+    "explanation": "docker-compose.yml (or compose.yml, preferred in Compose v2) defines multi-container services. The docker-compose.yml filename remains widely supported."
   },
   {
     "id": 50,
@@ -781,7 +781,7 @@
     "category": "CI/CD",
     "difficulty": "easy",
     "type": "mcq",
-    "question": "What does CD stand for in CI/CD?",
+    "question": "In CI/CD, what does CD stand for when referring to automated production releases?",
     "options": [
       "Code Deploy",
       "Continuous Deployment",
@@ -789,7 +789,7 @@
       "Component Delivery"
     ],
     "answer": "Continuous Deployment",
-    "explanation": "CD automates the release of code changes to production."
+    "explanation": "CD stands for Continuous Delivery or Continuous Deployment. Continuous Deployment automatically releases every passing build to production; Continuous Delivery automates up to the point of deployment, requiring a manual approval step."
   },
   {
     "id": 57,
@@ -973,7 +973,7 @@
     "category": "HTTP",
     "difficulty": "easy",
     "type": "mcq",
-    "question": "Which HTTP method is used to update a resource?",
+    "question": "Which HTTP method fully replaces a resource at a specific URL?",
     "options": [
       "GET",
       "POST",
@@ -981,7 +981,7 @@
       "DELETE"
     ],
     "answer": "PUT",
-    "explanation": "PUT is used to update an existing resource at a specific URL."
+    "explanation": "PUT replaces a resource entirely. PATCH applies a partial update. POST creates a resource. GET retrieves it."
   },
   {
     "id": 71,
@@ -1438,15 +1438,15 @@
     "category": "DevOps Fundamentals",
     "difficulty": "medium",
     "type": "mcq",
-    "question": "Which metric measures time from code commit to production deployment?",
+    "question": "In DORA metrics, which measures the time from code commit to running in production?",
     "options": [
-      "Lead time",
+      "Lead time for changes",
       "MTTR",
       "Change failure rate",
       "Deployment frequency"
     ],
-    "answer": "Lead time",
-    "explanation": "Lead time measures the total time from code commit to production deployment."
+    "answer": "Lead time for changes",
+    "explanation": "Lead time for changes (a DORA metric) measures the time from a code commit to it running successfully in production."
   },
   {
     "id": 104,
@@ -1500,13 +1500,13 @@
     "type": "mcq",
     "question": "What command creates a new branch?",
     "options": [
-      "git branch",
+      "git branch <name>",
       "git new",
       "git create",
       "git make-branch"
     ],
-    "answer": "git branch",
-    "explanation": "git branch creates or lists branches in a Git repository."
+    "answer": "git branch <name>",
+    "explanation": "git branch <name> creates a new branch. git branch alone lists existing branches. git checkout -b <name> creates and switches in one step."
   },
   {
     "id": 108,
@@ -1641,7 +1641,7 @@
       "FTP"
     ],
     "answer": "UDP",
-    "explanation": "DNS primarily uses UDP on port 53 for queries."
+    "explanation": "DNS primarily uses UDP on port 53 for standard queries due to low overhead. TCP is used for zone transfers, responses exceeding 512 bytes, and DNS-over-TLS."
   },
   {
     "id": 117,
@@ -2506,12 +2506,12 @@
     "question": "What is a dark launch?",
     "options": [
       "Secret deployment",
-      "Releasing features to limited users before full rollout",
+      "Deploying code to production silently without exposing it to users",
       "No release",
       "Delete release"
     ],
-    "answer": "Releasing features to limited users before full rollout",
-    "explanation": "Dark launches test features with a subset of users before full release."
+    "answer": "Deploying code to production silently without exposing it to users",
+    "explanation": "A dark launch deploys code to production where it processes real traffic silently in the background, without surfacing results to users. This is distinct from a canary release, which exposes a feature to a limited set of users."
   },
   {
     "id": 175,
@@ -2617,7 +2617,7 @@
     "category": "Version Control",
     "difficulty": "hard",
     "type": "mcq",
-    "question": "What command shows the differences between commits?",
+    "question": "Which command compares two commits or branches and shows line-by-line differences?",
     "options": [
       "git diff",
       "git show",
@@ -2625,7 +2625,7 @@
       "git log"
     ],
     "answer": "git diff",
-    "explanation": "git diff shows differences between commits, files, or branches."
+    "explanation": "git diff compares commits, branches, or the working tree and outputs line-by-line differences. git show displays metadata and the diff for a single commit."
   },
   {
     "id": 183,
@@ -2965,7 +2965,7 @@
     "category": "Version Control",
     "difficulty": "easy",
     "type": "mcq",
-    "question": "What is the main branch typically called?",
+    "question": "What is the default branch name in GitHub repositories created since 2020?",
     "options": [
       "develop",
       "main",
@@ -2973,7 +2973,7 @@
       "stable"
     ],
     "answer": "main",
-    "explanation": "main is the default branch name in modern Git workflows."
+    "explanation": "GitHub changed its default branch name from \"master\" to \"main\" in 2020. Both names remain in use across existing repositories."
   },
   {
     "id": 207,
@@ -3055,7 +3055,7 @@
     "category": "Linux",
     "difficulty": "easy",
     "type": "mcq",
-    "question": "What command shows current user?",
+    "question": "Which command prints only the current username?",
     "options": [
       "whoami",
       "user",
@@ -3063,7 +3063,7 @@
       "who"
     ],
     "answer": "whoami",
-    "explanation": "whoami displays the current username."
+    "explanation": "whoami prints only the current username. id shows the username along with user ID, group ID, and group memberships."
   },
   {
     "id": 213,
@@ -3103,12 +3103,12 @@
     "question": "What does lsof command show?",
     "options": [
       "List of files",
-      "Open files and processes",
+      "Open files, sockets, and processes",
       "Disk usage",
-      "Network connections"
+      "Swap space usage"
     ],
-    "answer": "Open files and processes",
-    "explanation": "lsof lists open files and the processes that opened them."
+    "answer": "Open files, sockets, and processes",
+    "explanation": "lsof (list open files) shows all open files, network sockets, pipes, and the processes that opened them \u2014 everything is a file in Unix."
   },
   {
     "id": 216,
@@ -3298,12 +3298,12 @@
     "question": "What is object storage?",
     "options": [
       "Block storage",
-      "File-based storage as objects",
+      "Storage managing data as objects with metadata and a flat namespace",
       "Memory storage",
       "Cache storage"
     ],
-    "answer": "File-based storage as objects",
-    "explanation": "Object storage manages data as objects with metadata."
+    "answer": "Storage managing data as objects with metadata and a flat namespace",
+    "explanation": "Object storage manages data as discrete objects (not files or blocks), each with a unique key, metadata, and accessed via API (e.g. S3). It uses a flat namespace rather than a directory hierarchy."
   },
   {
     "id": 229,
@@ -3505,7 +3505,7 @@
     "category": "Containers",
     "difficulty": "easy",
     "type": "mcq",
-    "question": "What command stops a Docker container?",
+    "question": "Which Docker command gracefully stops a container by sending SIGTERM first?",
     "options": [
       "docker delete",
       "docker stop",
@@ -3513,7 +3513,7 @@
       "docker remove"
     ],
     "answer": "docker stop",
-    "explanation": "docker stop gracefully stops a running container."
+    "explanation": "docker stop sends SIGTERM to allow graceful shutdown, then SIGKILL after a timeout. docker kill sends SIGKILL immediately."
   },
   {
     "id": 243,
@@ -4203,7 +4203,7 @@
       "Network diagram"
     ],
     "answer": "Metric type that distributes observations in buckets",
-    "explanation": "Histograms collect observation counts across configurable buckets."
+    "explanation": "A Prometheus histogram samples observations (e.g. request durations) and counts them in configurable buckets. It also exposes a cumulative count (_count) and sum (_sum), enabling quantile estimation and rate calculations."
   },
   {
     "id": 289,
@@ -4569,7 +4569,7 @@
       "Disk throughput"
     ],
     "answer": "F1 score",
-    "explanation": "F1 balances precision and recall when classes are uneven.",
+    "explanation": "F1 score balances precision and recall, making it useful when classes are imbalanced. AUC-ROC and Matthews Correlation Coefficient (MCC) are also strong choices; accuracy alone is misleading on skewed datasets.",
     "id": 310,
     "tags": [
       "ai",
@@ -4969,13 +4969,13 @@
     "type": "mcq",
     "question": "Which deployment pattern runs two model versions in parallel for comparison?",
     "options": [
-      "Blue/green or shadow deployment",
-      "Single-node mode",
+      "Shadow deployment",
+      "Blue/green deployment",
       "Air-gapped mode",
       "Stop-the-world deployment"
     ],
-    "answer": "Blue/green or shadow deployment",
-    "explanation": "Shadow or blue/green setups compare performance safely.",
+    "answer": "Shadow deployment",
+    "explanation": "Shadow deployment sends a copy of live traffic to the new model version in parallel without serving its output to users, enabling safe comparison. Blue/green deployment routes all traffic to one version at a time via a cutover.",
     "id": 328,
     "tags": [
       "ai",
@@ -6463,7 +6463,7 @@
       "Static thresholds only"
     ],
     "answer": "Unsupervised models",
-    "explanation": "Unsupervised methods can detect unknown abnormal patterns.",
+    "explanation": "Unsupervised models (e.g. Isolation Forest, autoencoders) are the most common approach because labeled anomaly data is scarce. Supervised models are used when historical labeled incidents are available.",
     "id": 402,
     "tags": [
       "ai",
@@ -6629,30 +6629,6 @@
       "mcq",
       "difficulty_easy",
       "retrieval"
-    ]
-  },
-  {
-    "category": "AI in DevOps",
-    "difficulty": "easy",
-    "type": "mcq",
-    "question": "Which metric best indicates a classifier balance on imbalanced incident data?",
-    "options": [
-      "Accuracy only",
-      "F1 score",
-      "CPU usage",
-      "Disk throughput"
-    ],
-    "answer": "F1 score",
-    "explanation": "F1 balances precision and recall when classes are uneven.",
-    "id": 410,
-    "tags": [
-      "ai",
-      "devops",
-      "mcq",
-      "difficulty_easy",
-      "incident-response",
-      "ml-models",
-      "evaluation"
     ]
   },
   {
@@ -7600,7 +7576,7 @@
     "category": "AI in DevOps",
     "difficulty": "medium",
     "type": "mcq",
-    "question": "What is one benefit of chain-of-thought suppression in production assistants?",
+    "question": "What is one benefit of hiding chain-of-thought reasoning from production assistant responses?",
     "options": [
       "Reduced leakage of internal reasoning details",
       "Higher cloud bills",
@@ -7608,7 +7584,7 @@
       "Guaranteed perfect answers"
     ],
     "answer": "Reduced leakage of internal reasoning details",
-    "explanation": "Avoid exposing internal reasoning while still returning results.",
+    "explanation": "Suppressing the model's internal reasoning steps from the final response prevents exposing implementation details, system prompts, or sensitive logic to end users, while still returning the result.",
     "id": 454,
     "tags": [
       "ai",
@@ -7975,12 +7951,12 @@
     "question": "Which team pairing is most effective for AI in DevOps rollout?",
     "options": [
       "SRE and platform engineering",
-      "Only procurement",
-      "Only legal",
-      "Only design"
+      "Data science only",
+      "Security and legal only",
+      "Finance and procurement"
     ],
     "answer": "SRE and platform engineering",
-    "explanation": "Joint ownership aligns reliability and delivery practices.",
+    "explanation": "SRE brings reliability and incident management expertise while platform engineering provides the infrastructure and tooling foundation \u2014 together they cover the key operational concerns for AI workloads in production.",
     "id": 471,
     "tags": [
       "ai",
