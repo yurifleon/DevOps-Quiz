@@ -370,6 +370,7 @@
         <div id="results-screen" class="card hidden">
             <div class="results">
                 <h2>Quiz Complete!</h2>
+                <p id="quiz-summary" style="color:#888;font-size:0.95rem;margin-bottom:16px;"></p>
                 <div class="score" id="score"></div>
                 <div class="score-text">points</div>
                 
@@ -666,7 +667,14 @@
         function showResults() {
             document.getElementById('quiz-screen').classList.add('hidden');
             document.getElementById('results-screen').classList.remove('hidden');
-            
+
+            const category = document.getElementById('category-filter').value;
+            const difficulty = document.getElementById('difficulty-filter').value;
+            const categoryLabel = category === 'all' ? 'All Categories' : category;
+            const difficultyLabel = difficulty === 'all' ? 'All Difficulties' : difficulty.charAt(0).toUpperCase() + difficulty.slice(1);
+            document.getElementById('quiz-summary').textContent =
+                `${categoryLabel} · ${difficultyLabel} · ${filteredQuestions.length} questions`;
+
             document.getElementById('score').textContent = score;
             document.getElementById('correct-count').textContent = correct;
             document.getElementById('incorrect-count').textContent = incorrect;
