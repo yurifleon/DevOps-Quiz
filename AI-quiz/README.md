@@ -35,7 +35,7 @@ A DevOps quiz application with 300 questions covering DevOps fundamentals, CI/CD
 ```bash
 # Using Python
 python -m http.server 8000
-# Open http://localhost:8000/quiz.html
+# Open http://localhost:8000/index.html
 
 # Using Node.js
 npx serve .
