@@ -7041,29 +7041,6 @@
     "category": "AI in DevOps",
     "difficulty": "easy",
     "type": "mcq",
-    "question": "Which deployment pattern runs two model versions in parallel for comparison?",
-    "options": [
-      "Blue/green or shadow deployment",
-      "Single-node mode",
-      "Air-gapped mode",
-      "Stop-the-world deployment"
-    ],
-    "answer": "Blue/green or shadow deployment",
-    "explanation": "Shadow or blue/green setups compare performance safely.",
-    "id": 428,
-    "tags": [
-      "ai",
-      "devops",
-      "mcq",
-      "difficulty_easy",
-      "ml-models",
-      "deployment"
-    ]
-  },
-  {
-    "category": "AI in DevOps",
-    "difficulty": "easy",
-    "type": "mcq",
     "question": "What is the best definition of hallucination in GenAI ops tools?",
     "options": [
       "High CPU usage",
