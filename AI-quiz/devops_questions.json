@@ -545,8 +545,8 @@
     "difficulty": "medium",
     "type": "true_false",
     "question": "Logs help trace requests across distributed systems.",
-    "answer": "false",
-    "explanation": "Distributed tracing helps trace requests; logs record discrete events."
+    "answer": "true",
+    "explanation": "Logs help trace requests across distributed systems, especially with correlation IDs. Distributed tracing provides richer end-to-end visibility, but logs are also used for tracing."
   },
   {
     "id": 40,
@@ -1372,12 +1372,12 @@
     "question": "What is mutation testing?",
     "options": [
       "Testing code that changes frequently",
-      "Introducing small changes to test suite to verify it catches them",
+      "Introducing small changes to source code to verify tests catch them",
       "Testing database migrations",
       "Testing user interface changes"
     ],
-    "answer": "Introducing small changes to test suite to verify it catches them",
-    "explanation": "Mutation testing evaluates test quality by introducing bugs and checking detection."
+    "answer": "Introducing small changes to source code to verify tests catch them",
+    "explanation": "Mutation testing evaluates test quality by introducing small bugs (mutations) into the source code and verifying the test suite detects them."
   },
   {
     "id": 99,
@@ -3167,8 +3167,8 @@
       "Encrypts traffic",
       "Routes packets"
     ],
-    "answer network and host portions": "Defines of an IP address",
-    "explanation": "Subnet masks divide IP addresses into network and host parts."
+    "explanation": "Subnet masks divide IP addresses into network and host parts.",
+    "answer": "Defines network and host portions of an IP address"
   },
   {
     "id": 220,
@@ -4198,11 +4198,11 @@
     "question": "What is histogram in Prometheus?",
     "options": [
       "Image format",
-      "Metric type that distributions observations in buckets",
+      "Metric type that distributes observations in buckets",
       "Log format",
       "Network diagram"
     ],
-    "answer": "Metric type that distributions observations in buckets",
+    "answer": "Metric type that distributes observations in buckets",
     "explanation": "Histograms collect observation counts across configurable buckets."
   },
   {
