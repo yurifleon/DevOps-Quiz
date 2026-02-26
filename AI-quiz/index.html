@@ -338,7 +338,6 @@
             </div>
             
             <button class="btn" id="start-btn" onclick="startQuiz()" disabled>Loading...</button>
-            <button class="btn btn-secondary" id="start-ai-btn" onclick="startAiQuiz()" disabled>Loading AI Quiz...</button>
         </div>
 
         <div id="quiz-screen" class="card hidden">
@@ -416,13 +415,9 @@
                 populateCategoryFilter();
                 document.getElementById('start-btn').disabled = false;
                 document.getElementById('start-btn').textContent = 'Start Quiz';
-                const aiButton = document.getElementById('start-ai-btn');
-                aiButton.disabled = false;
-                updateAiButtonLabel();
             } catch (error) {
                 console.error('Error loading questions:', error);
                 document.getElementById('start-btn').textContent = 'Error - Check console';
-                document.getElementById('start-ai-btn').textContent = 'Error - Check console';
                 document.querySelector('.start-screen p').textContent = 'Error: ' + error.message;
             }
         }
@@ -455,25 +450,6 @@
             syncQuickPickState();
         }
 
-        function updateAiButtonLabel() {
-            const aiButton = document.getElementById('start-ai-btn');
-            const aiCategory = 'AI in DevOps';
-            const difficulty = document.getElementById('difficulty-filter').value;
-            const aiPool = allQuestions.filter(q => {
-                const catMatch = q.category === aiCategory;
-                const diffMatch = difficulty === 'all' || q.difficulty === difficulty;
-                return catMatch && diffMatch;
-            });
-
-            if (aiPool.length === 0) {
-                aiButton.textContent = 'Start AI Quiz (0 available)';
-                return;
-            }
-
-            const count = aiPool.length <= QUESTIONS_PER_SESSION ? aiPool.length : QUESTIONS_PER_SESSION;
-            aiButton.textContent = `Start AI Quiz (${count} of ${aiPool.length})`;
-        }
-
         function applyCategoryQuickPick(category) {
             const select = document.getElementById('category-filter');
             if (!Array.from(select.options).some(opt => opt.value === category)) return;
@@ -501,7 +477,6 @@
             
             const count = pool.length <= QUESTIONS_PER_SESSION ? pool.length : QUESTIONS_PER_SESSION;
             document.getElementById('question-count').textContent = `${count} questions per session`;
-            updateAiButtonLabel();
         }
 
         function filterQuestions() {
@@ -546,19 +521,6 @@
             document.getElementById('results-screen').classList.add('hidden');
             
             showQuestion();
-        }
-
-        function startAiQuiz() {
-            const select = document.getElementById('category-filter');
-            const aiCategory = 'AI in DevOps';
-            if (!Array.from(select.options).some(opt => opt.value === aiCategory)) {
-                alert('AI in DevOps category is not available in the question set.');
-                return;
-            }
-            select.value = aiCategory;
-            updateQuestionCount();
-            syncQuickPickState();
-            startQuiz();
         }
 
         function showQuestion() {
