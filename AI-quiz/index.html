@@ -156,6 +156,16 @@
             transform: none;
         }
 
+        .btn-secondary {
+            background: #2f4f5f;
+            color: #fff;
+            margin-top: 12px;
+        }
+
+        .btn-secondary:hover {
+            background: #24414f;
+        }
+
         .explanation {
             margin-top: 20px;
             padding: 15px;
@@ -253,6 +263,37 @@
             cursor: pointer;
         }
 
+        .quick-picks {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .quick-pick {
+            padding: 8px 14px;
+            border: 1px solid #b0bec5;
+            border-radius: 999px;
+            background: #eceff1;
+            color: #37474f;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .quick-pick:hover {
+            border-color: #607d8b;
+            background: #dfe5e8;
+        }
+
+        .quick-pick.active {
+            background: #00d9ff;
+            border-color: #00d9ff;
+            color: #00323d;
+            font-weight: 600;
+        }
+
         .true-false-options {
             display: flex;
             gap: 15px;
@@ -290,8 +331,14 @@
                     <option value="hard">Hard</option>
                 </select>
             </div>
+
+            <div class="quick-picks">
+                <button type="button" class="quick-pick active" data-category="all">All Categories</button>
+                <button type="button" class="quick-pick" data-category="AI in DevOps">AI in DevOps</button>
+            </div>
             
             <button class="btn" id="start-btn" onclick="startQuiz()" disabled>Loading...</button>
+            <button class="btn btn-secondary" id="start-ai-btn" onclick="startAiQuiz()" disabled>Loading AI Quiz...</button>
         </div>
 
         <div id="quiz-screen" class="card hidden">
@@ -303,11 +350,13 @@
             <span class="difficulty" id="difficulty"></span>
             
             <h2 class="question" id="question"></h2>
-            
+            <p id="multi-hint" class="hidden" style="font-size:0.85rem;color:#888;font-style:italic;margin-bottom:15px;">Select all that apply</p>
+
             <div class="options" id="options"></div>
-            
+
             <button class="btn" id="submit-btn" onclick="submitAnswer()" disabled>Submit Answer</button>
-            
+            <button class="btn btn-secondary hidden" id="skip-btn" onclick="skipQuestion()">Skip Question</button>
+
             <div class="explanation" id="explanation">
                 <div class="explanation-title">Explanation:</div>
                 <div id="explanation-text"></div>
@@ -353,6 +402,8 @@
         let incorrect = 0;
         let skipped = 0;
         let selectedAnswer = null;
+        let selectedAnswers = new Set();
+        let isMultiSelect = false;
         let answered = false;
 
         async function loadQuestions() {
@@ -365,15 +416,19 @@
                 populateCategoryFilter();
                 document.getElementById('start-btn').disabled = false;
                 document.getElementById('start-btn').textContent = 'Start Quiz';
+                const aiButton = document.getElementById('start-ai-btn');
+                aiButton.disabled = false;
+                updateAiButtonLabel();
             } catch (error) {
                 console.error('Error loading questions:', error);
                 document.getElementById('start-btn').textContent = 'Error - Check console';
+                document.getElementById('start-ai-btn').textContent = 'Error - Check console';
                 document.querySelector('.start-screen p').textContent = 'Error: ' + error.message;
             }
         }
 
         function populateCategoryFilter() {
-            const categories = [...new Set(allQuestions.map(q => q.category))];
+            const categories = [...new Set(allQuestions.map(q => q.category).filter(Boolean))].sort();
             const select = document.getElementById('category-filter');
             categories.forEach(cat => {
                 const option = document.createElement('option');
@@ -381,10 +436,57 @@
                 option.textContent = cat;
                 select.appendChild(option);
             });
-            
-            document.getElementById('category-filter').addEventListener('change', updateQuestionCount);
+
+            document.querySelectorAll('.quick-pick').forEach(btn => {
+                btn.addEventListener('click', () => applyCategoryQuickPick(btn.dataset.category));
+                if (!Array.from(select.options).some(opt => opt.value === btn.dataset.category)) {
+                    btn.disabled = true;
+                    btn.style.opacity = '0.55';
+                    btn.style.cursor = 'not-allowed';
+                }
+            });
+
+            document.getElementById('category-filter').addEventListener('change', () => {
+                updateQuestionCount();
+                syncQuickPickState();
+            });
             document.getElementById('difficulty-filter').addEventListener('change', updateQuestionCount);
             updateQuestionCount();
+            syncQuickPickState();
+        }
+
+        function updateAiButtonLabel() {
+            const aiButton = document.getElementById('start-ai-btn');
+            const aiCategory = 'AI in DevOps';
+            const difficulty = document.getElementById('difficulty-filter').value;
+            const aiPool = allQuestions.filter(q => {
+                const catMatch = q.category === aiCategory;
+                const diffMatch = difficulty === 'all' || q.difficulty === difficulty;
+                return catMatch && diffMatch;
+            });
+
+            if (aiPool.length === 0) {
+                aiButton.textContent = 'Start AI Quiz (0 available)';
+                return;
+            }
+
+            const count = aiPool.length <= QUESTIONS_PER_SESSION ? aiPool.length : QUESTIONS_PER_SESSION;
+            aiButton.textContent = `Start AI Quiz (${count} of ${aiPool.length})`;
+        }
+
+        function applyCategoryQuickPick(category) {
+            const select = document.getElementById('category-filter');
+            if (!Array.from(select.options).some(opt => opt.value === category)) return;
+            select.value = category;
+            updateQuestionCount();
+            syncQuickPickState();
+        }
+
+        function syncQuickPickState() {
+            const category = document.getElementById('category-filter').value;
+            document.querySelectorAll('.quick-pick').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.category === category);
+            });
         }
 
         function updateQuestionCount() {
@@ -399,6 +501,7 @@
             
             const count = pool.length <= QUESTIONS_PER_SESSION ? pool.length : QUESTIONS_PER_SESSION;
             document.getElementById('question-count').textContent = `${count} questions per session`;
+            updateAiButtonLabel();
         }
 
         function filterQuestions() {
@@ -435,6 +538,8 @@
             correct = 0;
             incorrect = 0;
             skipped = 0;
+            isMultiSelect = false;
+            selectedAnswers = new Set();
             
             document.getElementById('start-screen').classList.add('hidden');
             document.getElementById('quiz-screen').classList.remove('hidden');
@@ -443,23 +548,38 @@
             showQuestion();
         }
 
+        function startAiQuiz() {
+            const select = document.getElementById('category-filter');
+            const aiCategory = 'AI in DevOps';
+            if (!Array.from(select.options).some(opt => opt.value === aiCategory)) {
+                alert('AI in DevOps category is not available in the question set.');
+                return;
+            }
+            select.value = aiCategory;
+            updateQuestionCount();
+            syncQuickPickState();
+            startQuiz();
+        }
+
         function showQuestion() {
             const q = filteredQuestions[currentQuestion];
             answered = false;
             selectedAnswer = null;
-            
+            selectedAnswers = new Set();
+            isMultiSelect = q.type === 'multi_select';
+
             document.getElementById('progress').style.width = `${((currentQuestion + 1) / filteredQuestions.length) * 100}%`;
             document.getElementById('category').textContent = q.category;
             document.getElementById('difficulty').textContent = q.difficulty;
             document.getElementById('difficulty').className = `difficulty ${q.difficulty}`;
             document.getElementById('question').textContent = q.question;
-            
+            document.getElementById('multi-hint').classList.toggle('hidden', !isMultiSelect);
+
             const optionsContainer = document.getElementById('options');
             optionsContainer.innerHTML = '';
-            
+
             if (q.type === 'true_false') {
-                const trueFalse = ['True', 'False'];
-                trueFalse.forEach(opt => {
+                ['True', 'False'].forEach(opt => {
                     const div = document.createElement('div');
                     div.className = 'option';
                     div.textContent = opt;
@@ -471,36 +591,69 @@
                     const div = document.createElement('div');
                     div.className = 'option';
                     div.textContent = opt;
-                    div.onclick = () => selectOption(div, opt);
+                    div.onclick = isMultiSelect
+                        ? () => toggleOption(div, opt)
+                        : () => selectOption(div, opt);
                     optionsContainer.appendChild(div);
                 });
             }
-            
+
             document.getElementById('submit-btn').disabled = true;
             document.getElementById('submit-btn').classList.remove('hidden');
+            document.getElementById('skip-btn').classList.remove('hidden');
             document.getElementById('next-btn').classList.add('hidden');
             document.getElementById('explanation').classList.remove('show');
         }
 
         function selectOption(element, value) {
             if (answered) return;
-            
             document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
             element.classList.add('selected');
             selectedAnswer = value;
             document.getElementById('submit-btn').disabled = false;
         }
 
+        function toggleOption(element, value) {
+            if (answered) return;
+            if (selectedAnswers.has(value)) {
+                selectedAnswers.delete(value);
+                element.classList.remove('selected');
+            } else {
+                selectedAnswers.add(value);
+                element.classList.add('selected');
+            }
+            document.getElementById('submit-btn').disabled = selectedAnswers.size === 0;
+        }
+
         function submitAnswer() {
-            if (!selectedAnswer || answered) return;
-            
+            if (answered) return;
+            if (isMultiSelect && selectedAnswers.size === 0) return;
+            if (!isMultiSelect && !selectedAnswer) return;
+
             answered = true;
+            document.getElementById('skip-btn').classList.add('hidden');
             const q = filteredQuestions[currentQuestion];
-            const isCorrect = selectedAnswer.toLowerCase() === q.answer.toLowerCase();
-            
+
+            let isCorrect;
+            if (isMultiSelect) {
+                const correctSet = new Set(q.answer.map(a => a.toLowerCase()));
+                const chosenSet = new Set([...selectedAnswers].map(a => a.toLowerCase()));
+                isCorrect = correctSet.size === chosenSet.size &&
+                    [...correctSet].every(a => chosenSet.has(a));
+            } else {
+                isCorrect = selectedAnswer.toLowerCase() === q.answer.toLowerCase();
+            }
+
             document.querySelectorAll('.option').forEach(opt => {
                 opt.style.pointerEvents = 'none';
-                if (q.type === 'true_false') {
+                if (isMultiSelect) {
+                    const correctList = q.answer.map(a => a.toLowerCase());
+                    if (correctList.includes(opt.textContent.toLowerCase())) {
+                        opt.classList.add('correct');
+                    } else if (selectedAnswers.has(opt.textContent)) {
+                        opt.classList.add('incorrect');
+                    }
+                } else if (q.type === 'true_false') {
                     if ((isCorrect && opt.textContent === selectedAnswer) ||
                         (!isCorrect && opt.textContent === q.answer)) {
                         opt.classList.add('correct');
@@ -515,18 +668,24 @@
                     }
                 }
             });
-            
+
             if (isCorrect) {
                 score += 10;
                 correct++;
             } else {
                 incorrect++;
             }
-            
+
             document.getElementById('explanation-text').textContent = q.explanation;
             document.getElementById('explanation').classList.add('show');
             document.getElementById('submit-btn').classList.add('hidden');
             document.getElementById('next-btn').classList.remove('hidden');
+        }
+
+        function skipQuestion() {
+            skipped++;
+            document.getElementById('skip-btn').classList.add('hidden');
+            nextQuestion();
         }
 
         function nextQuestion() {
