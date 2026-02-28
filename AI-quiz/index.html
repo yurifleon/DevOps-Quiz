@@ -348,6 +348,8 @@
                 <span id="progress-label" style="font-size:0.85rem;color:#666;white-space:nowrap;"></span>
             </div>
             
+            <div id="review-banner" class="hidden" style="background:#fff3e0;border-left:4px solid #ff9800;border-radius:6px;padding:8px 14px;margin-top:12px;color:#e65100;font-size:0.9rem;font-weight:500;">Reviewing skipped questions</div>
+
             <span class="category-tag" id="category"></span>
             <span class="difficulty" id="difficulty"></span>
             
@@ -403,11 +405,19 @@
         let score = 0;
         let correct = 0;
         let incorrect = 0;
-        let skipped = 0;
         let selectedAnswer = null;
         let selectedAnswers = new Set();
         let isMultiSelect = false;
         let answered = false;
+        let skippedIndices = [];
+        let reviewingSkipped = false;
+        let reviewIndex = 0;
+
+        function currentQ() {
+            return reviewingSkipped
+                ? filteredQuestions[skippedIndices[reviewIndex]]
+                : filteredQuestions[currentQuestion];
+        }
 
         async function loadQuestions() {
             try {
@@ -516,7 +526,9 @@
             score = 0;
             correct = 0;
             incorrect = 0;
-            skipped = 0;
+            skippedIndices = [];
+            reviewingSkipped = false;
+            reviewIndex = 0;
             isMultiSelect = false;
             selectedAnswers = new Set();
             
@@ -528,14 +540,22 @@
         }
 
         function showQuestion() {
-            const q = filteredQuestions[currentQuestion];
+            const q = currentQ();
             answered = false;
             selectedAnswer = null;
             selectedAnswers = new Set();
             isMultiSelect = q.type === 'multi_select';
 
-            document.getElementById('progress').style.width = `${((currentQuestion + 1) / filteredQuestions.length) * 100}%`;
-            document.getElementById('progress-label').textContent = `${currentQuestion + 1} / ${filteredQuestions.length}`;
+            if (reviewingSkipped) {
+                document.getElementById('progress').style.width = `${((reviewIndex + 1) / skippedIndices.length) * 100}%`;
+                document.getElementById('progress').style.background = '#ff9800';
+                document.getElementById('progress-label').textContent = `Review ${reviewIndex + 1} / ${skippedIndices.length}`;
+            } else {
+                document.getElementById('progress').style.width = `${((currentQuestion + 1) / filteredQuestions.length) * 100}%`;
+                document.getElementById('progress').style.background = '';
+                document.getElementById('progress-label').textContent = `${currentQuestion + 1} / ${filteredQuestions.length}`;
+            }
+            document.getElementById('review-banner').classList.toggle('hidden', !reviewingSkipped);
             document.getElementById('category').textContent = q.category;
             document.getElementById('difficulty').textContent = q.difficulty;
             document.getElementById('difficulty').className = `difficulty ${q.difficulty}`;
@@ -599,7 +619,7 @@
 
             answered = true;
             document.getElementById('skip-btn').classList.add('hidden');
-            const q = filteredQuestions[currentQuestion];
+            const q = currentQ();
 
             let isCorrect;
             if (isMultiSelect) {
@@ -649,19 +669,40 @@
             document.getElementById('next-btn').classList.remove('hidden');
         }
 
+        function advanceQuestion() {
+            if (reviewingSkipped) {
+                reviewIndex++;
+                if (reviewIndex >= skippedIndices.length) {
+                    showResults();
+                } else {
+                    showQuestion();
+                }
+            } else {
+                currentQuestion++;
+                if (currentQuestion >= filteredQuestions.length) {
+                    if (skippedIndices.length > 0) {
+                        reviewingSkipped = true;
+                        reviewIndex = 0;
+                        showQuestion();
+                    } else {
+                        showResults();
+                    }
+                } else {
+                    showQuestion();
+                }
+            }
+        }
+
         function skipQuestion() {
-            skipped++;
+            if (!reviewingSkipped) {
+                skippedIndices.push(currentQuestion);
+            }
             document.getElementById('skip-btn').classList.add('hidden');
-            nextQuestion();
+            advanceQuestion();
         }
 
         function nextQuestion() {
-            currentQuestion++;
-            if (currentQuestion >= filteredQuestions.length) {
-                showResults();
-            } else {
-                showQuestion();
-            }
+            advanceQuestion();
         }
 
         function showResults() {
@@ -675,6 +716,7 @@
             document.getElementById('quiz-summary').textContent =
                 `${categoryLabel} · ${difficultyLabel} · ${filteredQuestions.length} questions`;
 
+            const skipped = filteredQuestions.length - correct - incorrect;
             document.getElementById('score').textContent = score;
             document.getElementById('correct-count').textContent = correct;
             document.getElementById('incorrect-count').textContent = incorrect;
