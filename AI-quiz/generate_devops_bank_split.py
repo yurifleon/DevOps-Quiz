@@ -49,7 +49,7 @@ import os
 import random
 import re
 from dataclasses import dataclass, asdict
-from typing import List, Optional, Dict, Any, Tuple
+from typing import List, Optional, Dict, Any
 
 
 @dataclass
