@@ -31,19 +31,18 @@ python generate_devops_bank_split.py -d devops_bank --seed 42
 
 ## Architecture
 
-This is a static single-page app with no build step and no framework.
+This is a static single-page app with no build step and no framework. All state lives in module-level JS variables in `index.html`; there is no persistence between page loads.
 
 **`index.html`** — The entire quiz UI: HTML structure, inline `<style>` block, and a `<script>` block with all application logic. Key JS flow:
-1. `loadQuestions()` fetches `./devops_questions.json` on page load
-2. Start screen lets users filter by category/difficulty; "AI Quiz" button shortcuts to the "AI in DevOps" category
-3. `filterQuestions()` picks up to `QUESTIONS_PER_SESSION` (20) random questions from the filtered pool
-4. `showQuestion()` → `selectOption()` → `submitAnswer()` → `nextQuestion()` → `showResults()`
+1. `loadQuestions()` fetches `./devops_questions.json` on page load and populates the category `<select>` and quick-pick buttons from the data (categories are not hardcoded in HTML)
+2. Start screen lets users filter by category/difficulty; the "AI in DevOps" quick-pick button shortcuts to that category
+3. `startQuiz()` → `filterQuestions()` picks up to `QUESTIONS_PER_SESSION` (20) random questions from the filtered pool
+4. Per-question loop: `showQuestion()` → `selectOption()` (single-answer) or `toggleOption()` (multi-select) → `submitAnswer()` → `nextQuestion()`/`skipQuestion()` → `advanceQuestion()` → `showResults()`
+5. **Skip/review pass**: `skipQuestion()` records the index in `skippedIndices` and calls `advanceQuestion()`. Once the main pass reaches the end, if any questions were skipped, `advanceQuestion()` switches into a second pass (`reviewingSkipped = true`) iterating `skippedIndices` before finally calling `showResults()`. The skip button is hidden during the review pass. `currentQ()` resolves the active question from either `filteredQuestions[currentQuestion]` or the review index depending on `reviewingSkipped`.
 
-**Question data files:**
-- `devops_questions.json` — primary question bank (DevOps, CI/CD, containers, Kubernetes, etc.)
-- `ai_questions.json` — AI in DevOps questions (loaded alongside devops questions in future iterations)
+**`devops_questions.json`** — the single source of truth for quiz content (498 questions as of the last count). It is hand-edited directly (see recent commits fixing/improving individual question IDs) rather than regenerated from the Python script on every change.
 
-**`generate_devops_bank_split.py`** — standalone Python script that programmatically generates question JSON. Questions are defined as function calls to `_mcq()` and `_tf()` helpers, then serialized. Uses `--seed` for deterministic output.
+**`generate_devops_bank_split.py`** — standalone script that *programmatically defines* a question set via `_mcq()`/`_tf()` helper calls and writes it as **split per-category files plus an `index.json`** into an output directory (`-d`, default `devops_bank/`). It does not read or write `devops_questions.json` and is not part of the normal edit workflow for existing questions — treat it as a reference/bootstrap generator, not a build step.
 
 ## Question schema
 
@@ -61,9 +60,11 @@ This is a static single-page app with no build step and no framework.
 }
 ```
 
-- `options` is `null` for `true_false` type; the UI renders True/False buttons automatically
+- `options` is `null`/absent for `true_false` type; the UI renders True/False buttons automatically
 - `answer` must exactly match one of `options` (case-insensitive comparison at runtime)
 - `id` must be unique across all questions
+- `tags` is optional — only present on a subset of questions
+- The frontend also supports a `multi_select` type (`answer` as an array of strings, checkbox-style `toggleOption()` UI, exact-set match required) but no questions of this type currently exist in `devops_questions.json`
 
 ## Code style
 

@@ -2,10 +2,10 @@
 
 ## Project Overview
 
-This is a DevOps quiz application with:
-- `quiz.html` - Single-page quiz interface (HTML/CSS/JS)
-- `devops_questions.json` - Question data file
-- `generate_devops_bank_split.py` - Python script to generate 200-question quiz banks
+A static, single-page DevOps quiz app with no build step and no framework:
+- `index.html` — the entire UI: markup, inline `<style>`, and a `<script>` block with all app logic
+- `devops_questions.json` — the single source of truth for quiz content (498 questions across 17 categories); hand-edited directly, not generated
+- `generate_devops_bank_split.py` — standalone script that defines its own question set and writes it as per-category files into an output directory; it does not read or write `devops_questions.json` and isn't part of the normal question-editing workflow
 
 ---
 
@@ -16,16 +16,16 @@ This is a DevOps quiz application with:
 ```bash
 # Python HTTP server (recommended)
 python -m http.server 8000
-# Open: http://localhost:8000/quiz.html
+# Open: http://localhost:8000/index.html
 
 # Or using Node.js
-npx serve .
+npm start   # runs: npx serve -s . -l $PORT
 ```
 
 ### Running the Question Generator
 
 ```bash
-# Generate 200 questions to default output directory (devops_bank/)
+# Generate questions to default output directory (devops_bank/)
 python generate_devops_bank_split.py
 
 # Custom output directory and seed
@@ -35,37 +35,12 @@ python generate_devops_bank_split.py -d output_folder --seed 123
 ### Linting & Type Checking (Python)
 
 ```bash
-# Install dependencies
-pip install ruff mypy
-
-# Run ruff (linting + formatting)
 ruff check .
 ruff format .
-
-# Run mypy (type checking)
 mypy .
-
-# Run a single test file
-ruff check generate_devops_bank_split.py
-
-# Run specific lint rule
-ruff check --select E501 .  # Line length only
 ```
 
-### Single Test Execution
-
-No formal test framework is set up. To add tests:
-
-```bash
-# Install pytest
-pip install pytest
-
-# Run a specific test
-pytest tests/test_quiz_generator.py::test_mcq_validation
-
-# Run tests matching a pattern
-pytest -k "test_mcq"
-```
+There is no test framework in this repo.
 
 ---
 
@@ -75,7 +50,6 @@ pytest -k "test_mcq"
 
 #### Imports
 - Standard library first, then third-party, then local
-- Use explicit relative imports for local modules
 - Group: `from __future__ import annotations` → stdlib → third-party → local
 
 ```python
@@ -92,19 +66,13 @@ from typing import List, Optional, Dict, Any
 
 #### Formatting
 - Line length: 100 characters max
-- Use 4 spaces for indentation (no tabs)
-- Use trailing commas in multi-line collections
-- One blank line between top-level definitions
+- 4 spaces for indentation (no tabs)
+- Trailing commas in multi-line collections
 
 #### Types
-- Use type hints for all function signatures and variables
-- Prefer `List[T]`, `Dict[K, V]` over `list[T]`, `dict[K,V]` (compatible with Python 3.9)
+- Type hints on all function signatures and variables
+- Prefer `List[T]`, `Dict[K, V]` over `list[T]`, `dict[K,V]` (Python 3.9 compat)
 - Use `Optional[X]` instead of `X | None`
-
-```python
-def process_questions(questions: List[Dict[str, Any]], seed: int) -> List[Question]:
-    ...
-```
 
 #### Naming Conventions
 - Functions/variables: `snake_case`
@@ -113,122 +81,53 @@ def process_questions(questions: List[Dict[str, Any]], seed: int) -> List[Questi
 - Private functions: prefix with `_`
 
 #### Error Handling
-- Use specific exceptions with descriptive messages
-- Validate inputs at function boundaries
-- Fail fast with clear error messages
+- Use specific exceptions with descriptive messages, e.g. `_mcq()` raises `ValueError` if `answer` isn't one of `options`
+- Fail fast with clear error messages rather than silently coercing bad data
 
-```python
-def _mcq(category: str, difficulty: str, prompt: str, options: List[str], answer: str,
-         explanation: str, tags: List[str]) -> Dict[str, Any]:
-    if answer not in options:
-        raise ValueError(f"MCQ answer must be one of the options. Got {answer!r}")
-```
+### HTML/CSS/JavaScript (`index.html`)
 
-#### Dataclasses
-- Use `@dataclass` for simple data containers
-- Use `frozen=True` for immutable data
-- Use `field()` with `default_factory` for mutable defaults
-
----
-
-### HTML/CSS/JavaScript (`quiz.html`)
-
-#### General
-- Use semantic HTML5 elements
-- Keep JavaScript vanilla (no frameworks)
-- Inline CSS in `<style>` for single-file simplicity
-
-#### JavaScript
-- Use ES6+ features (const/let, arrow functions, template literals)
+- Vanilla ES6+, no external libraries/frameworks
 - Prefer `const` over `let`, avoid `var`
-- Use meaningful variable names
-- Add JSDoc comments for functions
-
-```javascript
-/**
- * Loads questions from the JSON file
- * @returns {Promise<Array>} Array of question objects
- */
-async function loadQuestions() {
-    const response = await fetch('devops_questions.json');
-    return await response.json();
-}
-```
-
-#### CSS
-- Use CSS custom properties for theming
-- Group related styles together
-- Use BEM-like naming for complex components
-- Keep specificity low
+- Inline CSS in the single `<style>` block; no CSS-in-JS or separate stylesheets
 
 ---
 
 ## Question Data Schema
-
-Each question must follow this structure:
 
 ```json
 {
   "id": 1,
   "category": "DevOps Fundamentals",
   "difficulty": "easy|medium|hard",
-  "type": "mcq|true_false|short_answer",
+  "type": "mcq|true_false|multi_select",
   "question": "Question text",
   "options": ["A", "B", "C", "D"] | null,
-  "answer": "Correct answer text",
+  "answer": "Correct answer text" | ["Correct", "Answers"],
   "explanation": "Explanation text",
   "tags": ["tag1", "tag2"]
 }
 ```
 
 ### Validation Rules
-- `id`: Unique integer across all categories
-- `difficulty`: Must be one of: easy, medium, hard
-- `type`: Must be one of: mcq, true_false, short_answer
-- `options`: Required for mcq, null for true_false/short_answer
-- `answer`: Must exist in `options` for mcq type
-
----
-
-## Project Structure
-
-```
-AI-quiz/
-├── quiz.html                    # Main quiz interface
-├── devops_questions.json        # Question data
-├── generate_devops_bank_split.py # Question generator
-├── AGENTS.md                    # This file
-└── devops_bank/                 # Generated output (after running script)
-    ├── index.json
-    ├── DevOps_Fundamentals.json
-    └── ...
-```
+- `id`: unique integer across the whole file
+- `difficulty`: one of `easy`, `medium`, `hard`
+- `type`: one of `mcq`, `true_false`, `multi_select` — the frontend supports `multi_select` (checkbox-style, `answer` as an array, exact-set match) but no such questions exist in `devops_questions.json` yet
+- `options`: required for `mcq`/`multi_select`, `null`/absent for `true_false`
+- `answer`: for `mcq`/`true_false` must exactly match one entry in `options` (case-insensitive at runtime); for `multi_select` an array of such strings
+- `tags`: optional — only present on a subset of questions
 
 ---
 
 ## Common Tasks
 
-### Add New Question to `devops_questions.json`
-1. Add new object with unique `id`
-2. Ensure valid `category`, `difficulty`, `type`
-3. For MCQ: include 4 options, answer in options
-4. Include explanation
+### Add a New Question to `devops_questions.json`
+1. Add a new object with a unique `id`
+2. Use a valid `category`, `difficulty`, `type`
+3. For `mcq`: include 4 options, with `answer` matching one of them exactly
+4. Include an `explanation`
 
-### Generate New Question Bank
+### Generate a Standalone Question Bank
 ```bash
 python generate_devops_bank_split.py -d devops_bank --seed 42
 ```
-
-### Test Quiz Interface
-1. Start HTTP server: `python -m http.server 8000`
-2. Open `http://localhost:8000/quiz.html`
-3. Test filters, quiz flow, and results
-
----
-
-## Notes for Agents
-
-- This is a simple project - no build system required
-- The quiz loads questions dynamically from JSON via fetch
-- For production, consider adding error handling for failed JSON loads
-- The Python script uses deterministic output with `--seed` flag
+This writes to a new `devops_bank/` directory using the generator's own hardcoded question set — it does not touch `devops_questions.json`.
