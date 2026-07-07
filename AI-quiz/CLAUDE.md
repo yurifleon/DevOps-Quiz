@@ -66,6 +66,19 @@ This is a static single-page app with no build step and no framework. All state 
 - `tags` is optional — only present on a subset of questions
 - The frontend also supports a `multi_select` type (`answer` as an array of strings, checkbox-style `toggleOption()` UI, exact-set match required) but no questions of this type currently exist in `devops_questions.json`
 
+## Working with JSON data files
+
+Treat the JSON datasets as structured data, not freeform text:
+
+- Keep them valid JSON with double quotes, no comments, and no trailing commas.
+- Preserve existing indentation and object ordering when possible so diffs remain easy to review.
+- When adding or editing quiz records, keep the schema consistent and ensure `id` values remain unique.
+- Validate any edited file after changes with:
+
+```bash
+python -m json.tool devops_questions.json > /dev/null
+```
+
 ## Code style
 
 **Python** (`generate_devops_bank_split.py`): line length 100, type hints on all signatures using `List[T]`/`Dict[K,V]`/`Optional[X]` (Python 3.9 compat), `snake_case` functions, `PascalCase` classes, `UPPER_SNAKE_CASE` constants.

@@ -118,6 +118,21 @@ from typing import List, Optional, Dict, Any
 
 ---
 
+## JSON File Editing Conventions
+
+When editing any JSON dataset files in this repo (especially `devops_questions.json`, `devops_questions_added_200.json`, and `devops_questions_plus_200.json`):
+
+- Keep files valid JSON: double-quoted keys/strings, no comments, and no trailing commas.
+- Preserve the existing indentation and array/object structure where possible to keep diffs readable.
+- Maintain the documented question schema exactly; do not invent fields or change `type`/`answer` semantics without updating the frontend logic.
+- Before finishing a JSON edit, validate it with:
+
+```bash
+python -m json.tool devops_questions.json > /dev/null
+```
+
+- For large or repetitive updates, prefer scripted edits over manual patching to avoid accidental formatting errors or duplicate `id` values.
+
 ## Common Tasks
 
 ### Add a New Question to `devops_questions.json`

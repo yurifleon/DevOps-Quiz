@@ -3108,7 +3108,7 @@
       "Swap space usage"
     ],
     "answer": "Open files, sockets, and processes",
-    "explanation": "lsof (list open files) shows all open files, network sockets, pipes, and the processes that opened them \u2014 everything is a file in Unix."
+    "explanation": "lsof (list open files) shows all open files, network sockets, pipes, and the processes that opened them — everything is a file in Unix."
   },
   {
     "id": 216,
@@ -7956,7 +7956,7 @@
       "Finance and procurement"
     ],
     "answer": "SRE and platform engineering",
-    "explanation": "SRE brings reliability and incident management expertise while platform engineering provides the infrastructure and tooling foundation \u2014 together they cover the key operational concerns for AI workloads in production.",
+    "explanation": "SRE brings reliability and incident management expertise while platform engineering provides the infrastructure and tooling foundation — together they cover the key operational concerns for AI workloads in production.",
     "id": 471,
     "tags": [
       "ai",
@@ -8454,6 +8454,3602 @@
       "llm",
       "runbooks",
       "evaluation"
+    ]
+  },
+  {
+    "id": 501,
+    "category": "AI in DevOps",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In AI in DevOps, what is the best description of model drift?",
+    "options": [
+      "a measurable change in model behavior or input data patterns over time",
+      "a Kubernetes scheduler option",
+      "a CPU throttling method",
+      "a Git branching strategy"
+    ],
+    "answer": "a measurable change in model behavior or input data patterns over time",
+    "explanation": "Track drift with monitoring and retraining triggers.",
+    "tags": [
+      "ai-in-devops",
+      "model-drift"
+    ]
+  },
+  {
+    "id": 502,
+    "category": "AI in DevOps",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In AI in DevOps, what is the best description of prompt injection defense?",
+    "options": [
+      "a build artifact naming convention",
+      "a database index type",
+      "controls that reduce the chance of malicious instructions overriding intended behavior",
+      "a way to speed up DNS"
+    ],
+    "answer": "controls that reduce the chance of malicious instructions overriding intended behavior",
+    "explanation": "Defenses include input boundaries, tool allowlists, and output validation.",
+    "tags": [
+      "ai-in-devops",
+      "prompt-injection-defense"
+    ]
+  },
+  {
+    "id": 503,
+    "category": "AI in DevOps",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In AI in DevOps, what is the best description of human-in-the-loop approval?",
+    "options": [
+      "requiring a person to approve high-risk AI-suggested actions",
+      "running every pipeline twice",
+      "turning off all automation",
+      "automatic deletion of audit logs"
+    ],
+    "answer": "requiring a person to approve high-risk AI-suggested actions",
+    "explanation": "Human approval is useful before production-impacting changes.",
+    "tags": [
+      "ai-in-devops",
+      "human-in-the-loop-approval"
+    ]
+  },
+  {
+    "id": 504,
+    "category": "AI in DevOps",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In AI in DevOps, what is the best description of retrieval grounding?",
+    "options": [
+      "compressing container layers",
+      "using approved reference material to support generated answers",
+      "rotating TLS certificates",
+      "changing Git remotes"
+    ],
+    "answer": "using approved reference material to support generated answers",
+    "explanation": "Grounding reduces hallucination by tying output to known sources.",
+    "tags": [
+      "ai-in-devops",
+      "retrieval-grounding"
+    ]
+  },
+  {
+    "id": 505,
+    "category": "AI in DevOps",
+    "difficulty": "medium",
+    "type": "true_false",
+    "question": "In AI in DevOps, 'agent allowlist' is best understood as limiting which tools or actions an AI agent may invoke.",
+    "answer": "true",
+    "explanation": "Allowlisting supports least privilege for AI-driven automation.",
+    "tags": [
+      "ai-in-devops",
+      "agent-allowlist"
+    ]
+  },
+  {
+    "id": 506,
+    "category": "AI in DevOps",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In AI in DevOps, what is the best description of eval dataset?",
+    "options": [
+      "an SSH key format",
+      "a cluster autoscaler policy",
+      "a Docker bridge network",
+      "a curated set of test prompts and expected behaviors"
+    ],
+    "answer": "a curated set of test prompts and expected behaviors",
+    "explanation": "Evaluation datasets help detect regressions in AI workflows.",
+    "tags": [
+      "ai-in-devops",
+      "eval-dataset"
+    ]
+  },
+  {
+    "id": 507,
+    "category": "AI in DevOps",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In AI in DevOps, what is the best description of LLM observability?",
+    "options": [
+      "tracking only CPU temperature",
+      "storing secrets in logs",
+      "disabling audit trails",
+      "capturing prompts, outputs, latency, cost, and quality signals safely"
+    ],
+    "answer": "capturing prompts, outputs, latency, cost, and quality signals safely",
+    "explanation": "LLM observability supports debugging while protecting sensitive data.",
+    "tags": [
+      "ai-in-devops",
+      "llm-observability"
+    ]
+  },
+  {
+    "id": 508,
+    "category": "AI in DevOps",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In AI in DevOps, what is the best description of red-team testing for AI?",
+    "options": [
+      "adversarial testing to uncover unsafe or unreliable behavior",
+      "a type of RAID array",
+      "a package cache refresh",
+      "a blue-green deployment shortcut"
+    ],
+    "answer": "adversarial testing to uncover unsafe or unreliable behavior",
+    "explanation": "Red-team tests probe failure modes before broad rollout.",
+    "tags": [
+      "ai-in-devops",
+      "red-team-testing-for-ai"
+    ]
+  },
+  {
+    "id": 509,
+    "category": "AI in DevOps",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In AI in DevOps, what is the best description of model rollback?",
+    "options": [
+      "returning to a previous approved model version",
+      "removing all containers",
+      "creating a new subnet",
+      "rebasing the main branch"
+    ],
+    "answer": "returning to a previous approved model version",
+    "explanation": "Versioned models make rollback possible after regression.",
+    "tags": [
+      "ai-in-devops",
+      "model-rollback"
+    ]
+  },
+  {
+    "id": 510,
+    "category": "AI in DevOps",
+    "difficulty": "hard",
+    "type": "true_false",
+    "question": "In AI in DevOps, 'AI change control' is best understood as reviewing, approving, and documenting changes to prompts, models, and tools.",
+    "answer": "true",
+    "explanation": "AI systems should follow change-management discipline.",
+    "tags": [
+      "ai-in-devops",
+      "ai-change-control"
+    ]
+  },
+  {
+    "id": 511,
+    "category": "AI in DevOps",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In AI in DevOps, what is the best description of sensitive prompt redaction?",
+    "options": [
+      "building a static binary",
+      "adding labels to pods",
+      "increasing MTU size",
+      "removing or masking secrets and PII before logging or model calls"
+    ],
+    "answer": "removing or masking secrets and PII before logging or model calls",
+    "explanation": "Redaction reduces data leakage risk.",
+    "tags": [
+      "ai-in-devops",
+      "sensitive-prompt-redaction"
+    ]
+  },
+  {
+    "id": 512,
+    "category": "AI in DevOps",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In AI in DevOps, what is the best description of AI runbook assistant?",
+    "options": [
+      "a controlled assistant that helps operators follow approved procedures",
+      "a replacement for all incident commanders",
+      "a storage class",
+      "a load balancer algorithm"
+    ],
+    "answer": "a controlled assistant that helps operators follow approved procedures",
+    "explanation": "Runbook assistants should cite approved procedures and require confirmation for risky steps.",
+    "tags": [
+      "ai-in-devops",
+      "ai-runbook-assistant"
+    ]
+  },
+  {
+    "id": 513,
+    "category": "Automation",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Automation, what is the best description of idempotent script?",
+    "options": [
+      "a script that must run only once",
+      "a script with no logging",
+      "a script that always deletes resources",
+      "a script that can run repeatedly and converge to the same desired state"
+    ],
+    "answer": "a script that can run repeatedly and converge to the same desired state",
+    "explanation": "Idempotency makes automation safer and repeatable.",
+    "tags": [
+      "automation",
+      "idempotent-script"
+    ]
+  },
+  {
+    "id": 514,
+    "category": "Automation",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Automation, what is the best description of dry-run mode?",
+    "options": [
+      "showing intended actions without making changes",
+      "removing all output",
+      "skipping validation",
+      "running jobs without network access"
+    ],
+    "answer": "showing intended actions without making changes",
+    "explanation": "Dry runs help verify impact before execution.",
+    "tags": [
+      "automation",
+      "dry-run-mode"
+    ]
+  },
+  {
+    "id": 515,
+    "category": "Automation",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Automation, what is the best description of retry with backoff?",
+    "options": [
+      "waiting progressively longer between retries",
+      "retrying instantly forever",
+      "disabling failure handling",
+      "forking unlimited processes"
+    ],
+    "answer": "waiting progressively longer between retries",
+    "explanation": "Backoff prevents retry storms and protects dependencies.",
+    "tags": [
+      "automation",
+      "retry-with-backoff"
+    ]
+  },
+  {
+    "id": 516,
+    "category": "Automation",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Automation, what is the best description of job scheduler?",
+    "options": [
+      "a Git merge driver",
+      "a TLS certificate",
+      "a system that runs tasks at specified times or events",
+      "a container image layer"
+    ],
+    "answer": "a system that runs tasks at specified times or events",
+    "explanation": "Schedulers like cron or systemd timers automate recurring work.",
+    "tags": [
+      "automation",
+      "job-scheduler"
+    ]
+  },
+  {
+    "id": 517,
+    "category": "Automation",
+    "difficulty": "medium",
+    "type": "true_false",
+    "question": "In Automation, 'parameterized automation' is best understood as using variables or inputs instead of hard-coded values.",
+    "answer": "true",
+    "explanation": "Parameters improve reuse across environments.",
+    "tags": [
+      "automation",
+      "parameterized-automation"
+    ]
+  },
+  {
+    "id": 518,
+    "category": "Automation",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Automation, what is the best description of automation audit log?",
+    "options": [
+      "a record of what automation did, when, and by whom",
+      "a compressed Docker image",
+      "a DNS resolver cache",
+      "a temporary shell alias"
+    ],
+    "answer": "a record of what automation did, when, and by whom",
+    "explanation": "Audit logs support troubleshooting and accountability.",
+    "tags": [
+      "automation",
+      "automation-audit-log"
+    ]
+  },
+  {
+    "id": 519,
+    "category": "Automation",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Automation, what is the best description of guardrail check?",
+    "options": [
+      "a default root password",
+      "a file compression algorithm",
+      "an option to bypass approvals",
+      "a validation that prevents unsafe automation actions"
+    ],
+    "answer": "a validation that prevents unsafe automation actions",
+    "explanation": "Guardrails prevent automation from exceeding safe boundaries.",
+    "tags": [
+      "automation",
+      "guardrail-check"
+    ]
+  },
+  {
+    "id": 520,
+    "category": "Automation",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Automation, what is the best description of configuration drift check?",
+    "options": [
+      "rotating log files",
+      "comparing actual state with desired state",
+      "counting open TCP ports only",
+      "formatting YAML"
+    ],
+    "answer": "comparing actual state with desired state",
+    "explanation": "Drift checks detect unauthorized or accidental changes.",
+    "tags": [
+      "automation",
+      "configuration-drift-check"
+    ]
+  },
+  {
+    "id": 521,
+    "category": "Automation",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Automation, what is the best description of rollback task?",
+    "options": [
+      "a disk partition resize",
+      "automation that returns a system to a previous known-good state",
+      "a cron syntax checker",
+      "a task that deletes backups"
+    ],
+    "answer": "automation that returns a system to a previous known-good state",
+    "explanation": "Rollback automation reduces recovery time.",
+    "tags": [
+      "automation",
+      "rollback-task"
+    ]
+  },
+  {
+    "id": 522,
+    "category": "Automation",
+    "difficulty": "hard",
+    "type": "true_false",
+    "question": "In Automation, 'template rendering' is best understood as generating config files from templates and variables.",
+    "answer": "true",
+    "explanation": "Templates standardize configuration output.",
+    "tags": [
+      "automation",
+      "template-rendering"
+    ]
+  },
+  {
+    "id": 523,
+    "category": "Automation",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In Automation, what is the best description of secrets injection?",
+    "options": [
+      "disabling MFA",
+      "adding passwords to Git",
+      "supplying secrets securely at runtime rather than hard-coding them",
+      "opening all firewall ports"
+    ],
+    "answer": "supplying secrets securely at runtime rather than hard-coding them",
+    "explanation": "Runtime injection reduces secret exposure.",
+    "tags": [
+      "automation",
+      "secrets-injection"
+    ]
+  },
+  {
+    "id": 524,
+    "category": "Automation",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In Automation, what is the best description of approval gate?",
+    "options": [
+      "a required review step before automation continues",
+      "a container health check only",
+      "a DNS CNAME",
+      "a way to bypass change windows"
+    ],
+    "answer": "a required review step before automation continues",
+    "explanation": "Approval gates protect high-risk operations.",
+    "tags": [
+      "automation",
+      "approval-gate"
+    ]
+  },
+  {
+    "id": 525,
+    "category": "CI/CD",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In CI/CD, what is the best description of pipeline as code?",
+    "options": [
+      "manually clicking every deployment",
+      "running builds on developer laptops only",
+      "documenting pipelines only in chat",
+      "defining CI/CD stages in version-controlled files"
+    ],
+    "answer": "defining CI/CD stages in version-controlled files",
+    "explanation": "Pipeline as code makes delivery workflows reviewable and repeatable.",
+    "tags": [
+      "ci-cd",
+      "pipeline-as-code"
+    ]
+  },
+  {
+    "id": 526,
+    "category": "CI/CD",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In CI/CD, what is the best description of quality gate?",
+    "options": [
+      "a subnet mask",
+      "a required check that must pass before promotion",
+      "a load balancer rule",
+      "an SSH tunnel"
+    ],
+    "answer": "a required check that must pass before promotion",
+    "explanation": "Quality gates block unsafe releases.",
+    "tags": [
+      "ci-cd",
+      "quality-gate"
+    ]
+  },
+  {
+    "id": 527,
+    "category": "CI/CD",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In CI/CD, what is the best description of artifact promotion?",
+    "options": [
+      "changing source code after approval",
+      "moving the same built artifact through environments",
+      "deleting old artifacts before testing",
+      "rebuilding new binaries in every stage"
+    ],
+    "answer": "moving the same built artifact through environments",
+    "explanation": "Promoting the same artifact improves traceability.",
+    "tags": [
+      "ci-cd",
+      "artifact-promotion"
+    ]
+  },
+  {
+    "id": 528,
+    "category": "CI/CD",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In CI/CD, what is the best description of immutable artifact?",
+    "options": [
+      "a build output that is not modified after creation",
+      "a server with no logs",
+      "a pod without labels",
+      "a branch that can never merge"
+    ],
+    "answer": "a build output that is not modified after creation",
+    "explanation": "Immutable artifacts reduce environment differences.",
+    "tags": [
+      "ci-cd",
+      "immutable-artifact"
+    ]
+  },
+  {
+    "id": 529,
+    "category": "CI/CD",
+    "difficulty": "medium",
+    "type": "true_false",
+    "question": "In CI/CD, 'pipeline trigger' is best understood as an event such as commit, tag, schedule, or manual approval that starts a pipeline.",
+    "answer": "true",
+    "explanation": "Triggers control when pipelines run.",
+    "tags": [
+      "ci-cd",
+      "pipeline-trigger"
+    ]
+  },
+  {
+    "id": 530,
+    "category": "CI/CD",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In CI/CD, what is the best description of deployment approval?",
+    "options": [
+      "a manual or automated authorization before deploying",
+      "turning off monitoring",
+      "a Git clone operation",
+      "automatic deletion of tests"
+    ],
+    "answer": "a manual or automated authorization before deploying",
+    "explanation": "Approvals are often required for production changes.",
+    "tags": [
+      "ci-cd",
+      "deployment-approval"
+    ]
+  },
+  {
+    "id": 531,
+    "category": "CI/CD",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In CI/CD, what is the best description of rollback stage?",
+    "options": [
+      "a stage that ignores failures",
+      "a step that only formats code",
+      "a pipeline step that restores a previous version",
+      "a step that deletes audit logs"
+    ],
+    "answer": "a pipeline step that restores a previous version",
+    "explanation": "Rollback stages improve recovery.",
+    "tags": [
+      "ci-cd",
+      "rollback-stage"
+    ]
+  },
+  {
+    "id": 532,
+    "category": "CI/CD",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In CI/CD, what is the best description of environment promotion?",
+    "options": [
+      "scaling all pods to zero",
+      "changing terminal color",
+      "advancing a release from dev to test to production",
+      "creating a local Git branch"
+    ],
+    "answer": "advancing a release from dev to test to production",
+    "explanation": "Promotion enforces controlled progression.",
+    "tags": [
+      "ci-cd",
+      "environment-promotion"
+    ]
+  },
+  {
+    "id": 533,
+    "category": "CI/CD",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In CI/CD, what is the best description of build cache?",
+    "options": [
+      "a user access token",
+      "a production database backup",
+      "stored dependencies or intermediate outputs reused to speed builds",
+      "an alert routing rule"
+    ],
+    "answer": "stored dependencies or intermediate outputs reused to speed builds",
+    "explanation": "Build caches reduce pipeline duration.",
+    "tags": [
+      "ci-cd",
+      "build-cache"
+    ]
+  },
+  {
+    "id": 534,
+    "category": "CI/CD",
+    "difficulty": "hard",
+    "type": "true_false",
+    "question": "In CI/CD, 'parallel test execution' is best understood as running independent tests concurrently.",
+    "answer": "true",
+    "explanation": "Parallelism speeds feedback.",
+    "tags": [
+      "ci-cd",
+      "parallel-test-execution"
+    ]
+  },
+  {
+    "id": 535,
+    "category": "CI/CD",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In CI/CD, what is the best description of change failure rate?",
+    "options": [
+      "CPU idle time",
+      "percentage of deployments causing incidents or remediation",
+      "rate of successful logins",
+      "number of servers in a cluster"
+    ],
+    "answer": "percentage of deployments causing incidents or remediation",
+    "explanation": "Change failure rate is a DORA metric.",
+    "tags": [
+      "ci-cd",
+      "change-failure-rate"
+    ]
+  },
+  {
+    "id": 536,
+    "category": "CI/CD",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In CI/CD, what is the best description of release provenance?",
+    "options": [
+      "a local shell alias",
+      "a random version name",
+      "a DNS TTL",
+      "evidence showing where an artifact came from and how it was built"
+    ],
+    "answer": "evidence showing where an artifact came from and how it was built",
+    "explanation": "Provenance helps verify supply-chain integrity.",
+    "tags": [
+      "ci-cd",
+      "release-provenance"
+    ]
+  },
+  {
+    "id": 537,
+    "category": "Cloud",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Cloud, what is the best description of availability zone?",
+    "options": [
+      "a Git branch protection rule",
+      "a Kubernetes namespace only",
+      "an isolated data-center location inside a cloud region",
+      "a CDN cache key"
+    ],
+    "answer": "an isolated data-center location inside a cloud region",
+    "explanation": "Zones support high availability architecture.",
+    "tags": [
+      "cloud",
+      "availability-zone"
+    ]
+  },
+  {
+    "id": 538,
+    "category": "Cloud",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Cloud, what is the best description of autoscaling group?",
+    "options": [
+      "a static DNS zone",
+      "an encryption algorithm",
+      "a service that adjusts compute capacity based on demand or policy",
+      "a fixed server inventory"
+    ],
+    "answer": "a service that adjusts compute capacity based on demand or policy",
+    "explanation": "Autoscaling improves elasticity and resilience.",
+    "tags": [
+      "cloud",
+      "autoscaling-group"
+    ]
+  },
+  {
+    "id": 539,
+    "category": "Cloud",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Cloud, what is the best description of managed database?",
+    "options": [
+      "a container image registry",
+      "a text file in Git",
+      "a database service where the provider handles many operational tasks",
+      "a hand-built database on one laptop"
+    ],
+    "answer": "a database service where the provider handles many operational tasks",
+    "explanation": "Managed services reduce operational burden.",
+    "tags": [
+      "cloud",
+      "managed-database"
+    ]
+  },
+  {
+    "id": 540,
+    "category": "Cloud",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Cloud, what is the best description of object storage?",
+    "options": [
+      "a running container filesystem only",
+      "a Git commit graph",
+      "storage for objects such as files and metadata accessed by API",
+      "block RAM for CPU cache"
+    ],
+    "answer": "storage for objects such as files and metadata accessed by API",
+    "explanation": "Object storage is common for backups, artifacts, and static assets.",
+    "tags": [
+      "cloud",
+      "object-storage"
+    ]
+  },
+  {
+    "id": 541,
+    "category": "Cloud",
+    "difficulty": "medium",
+    "type": "true_false",
+    "question": "In Cloud, 'cloud IAM policy' is best understood as rules that define allowed and denied actions on cloud resources.",
+    "answer": "true",
+    "explanation": "IAM policies enforce access control.",
+    "tags": [
+      "cloud",
+      "cloud-iam-policy"
+    ]
+  },
+  {
+    "id": 542,
+    "category": "Cloud",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Cloud, what is the best description of tagging strategy?",
+    "options": [
+      "opening network ACLs",
+      "renaming all servers daily",
+      "compressing backups",
+      "consistent metadata labels for cost, ownership, and automation"
+    ],
+    "answer": "consistent metadata labels for cost, ownership, and automation",
+    "explanation": "Tags support governance and cost reporting.",
+    "tags": [
+      "cloud",
+      "tagging-strategy"
+    ]
+  },
+  {
+    "id": 543,
+    "category": "Cloud",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Cloud, what is the best description of cloud budget alert?",
+    "options": [
+      "a pod readiness probe",
+      "notification when spend approaches a configured threshold",
+      "an SSH known_hosts entry",
+      "an HTTP redirect"
+    ],
+    "answer": "notification when spend approaches a configured threshold",
+    "explanation": "Budget alerts prevent surprise costs.",
+    "tags": [
+      "cloud",
+      "cloud-budget-alert"
+    ]
+  },
+  {
+    "id": 544,
+    "category": "Cloud",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Cloud, what is the best description of spot instance?",
+    "options": [
+      "a database index",
+      "a TLS certificate",
+      "discounted compute that can be interrupted by the provider",
+      "a guaranteed dedicated server"
+    ],
+    "answer": "discounted compute that can be interrupted by the provider",
+    "explanation": "Spot instances are useful for fault-tolerant workloads.",
+    "tags": [
+      "cloud",
+      "spot-instance"
+    ]
+  },
+  {
+    "id": 545,
+    "category": "Cloud",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Cloud, what is the best description of private subnet?",
+    "options": [
+      "a Git stash",
+      "a publicly writable bucket",
+      "a subnet without direct inbound access from the public internet",
+      "a shell function"
+    ],
+    "answer": "a subnet without direct inbound access from the public internet",
+    "explanation": "Private subnets reduce exposure.",
+    "tags": [
+      "cloud",
+      "private-subnet"
+    ]
+  },
+  {
+    "id": 546,
+    "category": "Cloud",
+    "difficulty": "hard",
+    "type": "true_false",
+    "question": "In Cloud, 'cloud-native backup' is best understood as backup designed for cloud resources and recovery objectives.",
+    "answer": "true",
+    "explanation": "Backups should align with RPO and RTO.",
+    "tags": [
+      "cloud",
+      "cloud-native-backup"
+    ]
+  },
+  {
+    "id": 547,
+    "category": "Cloud",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In Cloud, what is the best description of serverless cold start?",
+    "options": [
+      "a failed Git rebase",
+      "a firewall deny log",
+      "a container image vulnerability",
+      "latency when initializing a serverless function instance"
+    ],
+    "answer": "latency when initializing a serverless function instance",
+    "explanation": "Cold starts can affect latency-sensitive workloads.",
+    "tags": [
+      "cloud",
+      "serverless-cold-start"
+    ]
+  },
+  {
+    "id": 548,
+    "category": "Cloud",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In Cloud, what is the best description of multi-account strategy?",
+    "options": [
+      "removing billing alerts",
+      "sharing one root account password",
+      "using one bucket for everything",
+      "separating workloads or environments across cloud accounts/subscriptions"
+    ],
+    "answer": "separating workloads or environments across cloud accounts/subscriptions",
+    "explanation": "Account separation improves blast-radius control.",
+    "tags": [
+      "cloud",
+      "multi-account-strategy"
+    ]
+  },
+  {
+    "id": 549,
+    "category": "Containers",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Containers, what is the best description of container layer?",
+    "options": [
+      "a DNS zone",
+      "a filesystem change layer that forms part of an image",
+      "a Git tag",
+      "a Kubernetes control-plane process"
+    ],
+    "answer": "a filesystem change layer that forms part of an image",
+    "explanation": "Layering enables image reuse and caching.",
+    "tags": [
+      "containers",
+      "container-layer"
+    ]
+  },
+  {
+    "id": 550,
+    "category": "Containers",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Containers, what is the best description of health check?",
+    "options": [
+      "a backup schedule",
+      "a port scanning attack",
+      "a command or endpoint used to determine container health",
+      "a command to delete images"
+    ],
+    "answer": "a command or endpoint used to determine container health",
+    "explanation": "Health checks support automated recovery.",
+    "tags": [
+      "containers",
+      "health-check"
+    ]
+  },
+  {
+    "id": 551,
+    "category": "Containers",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Containers, what is the best description of rootless container?",
+    "options": [
+      "a container that cannot network",
+      "a container with no filesystem",
+      "a container run without requiring root privileges on the host",
+      "a container with no process"
+    ],
+    "answer": "a container run without requiring root privileges on the host",
+    "explanation": "Rootless mode reduces privilege risk.",
+    "tags": [
+      "containers",
+      "rootless-container"
+    ]
+  },
+  {
+    "id": 552,
+    "category": "Containers",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Containers, what is the best description of image digest?",
+    "options": [
+      "a Docker volume name",
+      "a content-addressed identifier for an image",
+      "a CPU scheduling class",
+      "a container log level"
+    ],
+    "answer": "a content-addressed identifier for an image",
+    "explanation": "Digests provide stronger immutability than tags alone.",
+    "tags": [
+      "containers",
+      "image-digest"
+    ]
+  },
+  {
+    "id": 553,
+    "category": "Containers",
+    "difficulty": "medium",
+    "type": "true_false",
+    "question": "In Containers, 'bind mount' is best understood as mounting a host path into a container.",
+    "answer": "true",
+    "explanation": "Bind mounts expose host files to containers.",
+    "tags": [
+      "containers",
+      "bind-mount"
+    ]
+  },
+  {
+    "id": 554,
+    "category": "Containers",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Containers, what is the best description of container registry authentication?",
+    "options": [
+      "a DNS resolver mode",
+      "a way to disable logs",
+      "a pod eviction policy",
+      "credentials used to push or pull protected images"
+    ],
+    "answer": "credentials used to push or pull protected images",
+    "explanation": "Registry auth controls image access.",
+    "tags": [
+      "containers",
+      "container-registry-authentication"
+    ]
+  },
+  {
+    "id": 555,
+    "category": "Containers",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Containers, what is the best description of minimal base image?",
+    "options": [
+      "a VM disk snapshot",
+      "a load balancer pool",
+      "a small image with fewer packages and attack surface",
+      "an image that always runs as root"
+    ],
+    "answer": "a small image with fewer packages and attack surface",
+    "explanation": "Minimal images reduce vulnerabilities and size.",
+    "tags": [
+      "containers",
+      "minimal-base-image"
+    ]
+  },
+  {
+    "id": 556,
+    "category": "Containers",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Containers, what is the best description of container entrypoint?",
+    "options": [
+      "a network subnet",
+      "the default executable launched when a container starts",
+      "a storage bucket policy",
+      "a Git remote"
+    ],
+    "answer": "the default executable launched when a container starts",
+    "explanation": "Entrypoint defines container startup behavior.",
+    "tags": [
+      "containers",
+      "container-entrypoint"
+    ]
+  },
+  {
+    "id": 557,
+    "category": "Containers",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Containers, what is the best description of container resource limit?",
+    "options": [
+      "a cap on CPU or memory a container may use",
+      "a DNS record TTL",
+      "a software license key",
+      "a Git commit signature"
+    ],
+    "answer": "a cap on CPU or memory a container may use",
+    "explanation": "Limits protect the host and neighboring workloads.",
+    "tags": [
+      "containers",
+      "container-resource-limit"
+    ]
+  },
+  {
+    "id": 558,
+    "category": "Containers",
+    "difficulty": "hard",
+    "type": "true_false",
+    "question": "In Containers, 'image scanning' is best understood as checking images for known vulnerabilities or policy violations.",
+    "answer": "true",
+    "explanation": "Scanning helps detect insecure dependencies.",
+    "tags": [
+      "containers",
+      "image-scanning"
+    ]
+  },
+  {
+    "id": 559,
+    "category": "Containers",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In Containers, what is the best description of ephemeral container filesystem?",
+    "options": [
+      "a cloud IAM role",
+      "a static website bucket",
+      "a permanent database backup",
+      "container writable layer that is lost when removed unless persisted"
+    ],
+    "answer": "container writable layer that is lost when removed unless persisted",
+    "explanation": "Use volumes for data that must survive container removal.",
+    "tags": [
+      "containers",
+      "ephemeral-container-filesystem"
+    ]
+  },
+  {
+    "id": 560,
+    "category": "Containers",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In Containers, what is the best description of sidecar container?",
+    "options": [
+      "a subnet route table",
+      "a helper container running alongside the main container",
+      "a Git conflict marker",
+      "a failed build artifact"
+    ],
+    "answer": "a helper container running alongside the main container",
+    "explanation": "Sidecars often handle proxies, logging, or agents.",
+    "tags": [
+      "containers",
+      "sidecar-container"
+    ]
+  },
+  {
+    "id": 561,
+    "category": "DevOps Fundamentals",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In DevOps Fundamentals, what is the best description of CALMS model?",
+    "options": [
+      "Code, Audit, Linux, Memory, Security",
+      "Cloud, Access, Load, Monitor, Scale",
+      "Culture, Automation, Lean, Measurement, and Sharing",
+      "Compute, API, Logs, Metrics, Storage"
+    ],
+    "answer": "Culture, Automation, Lean, Measurement, and Sharing",
+    "explanation": "CALMS is a common DevOps framework.",
+    "tags": [
+      "devops-fundamentals",
+      "calms-model"
+    ]
+  },
+  {
+    "id": 562,
+    "category": "DevOps Fundamentals",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In DevOps Fundamentals, what is the best description of feedback loop?",
+    "options": [
+      "a way to disable alerts",
+      "fast information flow that helps teams detect and correct issues",
+      "a static firewall rule",
+      "a database replication mode"
+    ],
+    "answer": "fast information flow that helps teams detect and correct issues",
+    "explanation": "Feedback loops drive continuous improvement.",
+    "tags": [
+      "devops-fundamentals",
+      "feedback-loop"
+    ]
+  },
+  {
+    "id": 563,
+    "category": "DevOps Fundamentals",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In DevOps Fundamentals, what is the best description of blameless postmortem?",
+    "options": [
+      "incident review focused on learning rather than punishment",
+      "a way to delete logs",
+      "a meeting to assign blame",
+      "a skipped root-cause review"
+    ],
+    "answer": "incident review focused on learning rather than punishment",
+    "explanation": "Blameless reviews improve safety culture.",
+    "tags": [
+      "devops-fundamentals",
+      "blameless-postmortem"
+    ]
+  },
+  {
+    "id": 564,
+    "category": "DevOps Fundamentals",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In DevOps Fundamentals, what is the best description of value stream mapping?",
+    "options": [
+      "visualizing steps from idea to customer value",
+      "a container runtime option",
+      "a Git submodule command",
+      "mapping IP addresses only"
+    ],
+    "answer": "visualizing steps from idea to customer value",
+    "explanation": "Value stream maps reveal bottlenecks.",
+    "tags": [
+      "devops-fundamentals",
+      "value-stream-mapping"
+    ]
+  },
+  {
+    "id": 565,
+    "category": "DevOps Fundamentals",
+    "difficulty": "medium",
+    "type": "true_false",
+    "question": "In DevOps Fundamentals, 'small batch delivery' is best understood as shipping smaller changes more frequently.",
+    "answer": "true",
+    "explanation": "Small batches reduce risk.",
+    "tags": [
+      "devops-fundamentals",
+      "small-batch-delivery"
+    ]
+  },
+  {
+    "id": 566,
+    "category": "DevOps Fundamentals",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In DevOps Fundamentals, what is the best description of shared ownership?",
+    "options": [
+      "developers ignoring production",
+      "teams collectively responsible for delivery and operations",
+      "operations blocking all releases",
+      "a single admin owning all systems"
+    ],
+    "answer": "teams collectively responsible for delivery and operations",
+    "explanation": "Shared ownership aligns incentives.",
+    "tags": [
+      "devops-fundamentals",
+      "shared-ownership"
+    ]
+  },
+  {
+    "id": 567,
+    "category": "DevOps Fundamentals",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In DevOps Fundamentals, what is the best description of continuous improvement?",
+    "options": [
+      "never changing working processes",
+      "removing metrics",
+      "regularly improving process, tools, and quality based on feedback",
+      "deploying manually forever"
+    ],
+    "answer": "regularly improving process, tools, and quality based on feedback",
+    "explanation": "Continuous improvement is central to DevOps.",
+    "tags": [
+      "devops-fundamentals",
+      "continuous-improvement"
+    ]
+  },
+  {
+    "id": 568,
+    "category": "DevOps Fundamentals",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In DevOps Fundamentals, what is the best description of platform engineering?",
+    "options": [
+      "outsourcing all operations",
+      "building internal capabilities that help teams deliver software safely",
+      "manual ticket-only provisioning",
+      "disabling self-service"
+    ],
+    "answer": "building internal capabilities that help teams deliver software safely",
+    "explanation": "Platforms reduce cognitive load.",
+    "tags": [
+      "devops-fundamentals",
+      "platform-engineering"
+    ]
+  },
+  {
+    "id": 569,
+    "category": "DevOps Fundamentals",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In DevOps Fundamentals, what is the best description of golden path?",
+    "options": [
+      "a security bypass",
+      "a supported, recommended way to build and deploy services",
+      "the only possible solution for every team",
+      "a server naming standard only"
+    ],
+    "answer": "a supported, recommended way to build and deploy services",
+    "explanation": "Golden paths standardize best practices.",
+    "tags": [
+      "devops-fundamentals",
+      "golden-path"
+    ]
+  },
+  {
+    "id": 570,
+    "category": "DevOps Fundamentals",
+    "difficulty": "hard",
+    "type": "true_false",
+    "question": "In DevOps Fundamentals, 'toil reduction' is best understood as reducing repetitive manual operational work.",
+    "answer": "true",
+    "explanation": "Reducing toil frees time for engineering work.",
+    "tags": [
+      "devops-fundamentals",
+      "toil-reduction"
+    ]
+  },
+  {
+    "id": 571,
+    "category": "DevOps Fundamentals",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In DevOps Fundamentals, what is the best description of psychological safety?",
+    "options": [
+      "avoiding incident review",
+      "removing accountability",
+      "not documenting failures",
+      "team climate where people can raise problems without fear"
+    ],
+    "answer": "team climate where people can raise problems without fear",
+    "explanation": "Safety supports learning and reporting.",
+    "tags": [
+      "devops-fundamentals",
+      "psychological-safety"
+    ]
+  },
+  {
+    "id": 572,
+    "category": "DevOps Fundamentals",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In DevOps Fundamentals, what is the best description of service ownership?",
+    "options": [
+      "only QA owning production",
+      "temporary access only",
+      "no assigned responders",
+      "clear responsibility for operating and improving a service"
+    ],
+    "answer": "clear responsibility for operating and improving a service",
+    "explanation": "Ownership improves accountability.",
+    "tags": [
+      "devops-fundamentals",
+      "service-ownership"
+    ]
+  },
+  {
+    "id": 573,
+    "category": "HTTP",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In HTTP, what is the best description of PATCH method?",
+    "options": [
+      "retrieving a resource only",
+      "opening a TCP socket",
+      "partially updating a resource",
+      "deleting a resource"
+    ],
+    "answer": "partially updating a resource",
+    "explanation": "PATCH is commonly used for partial updates.",
+    "tags": [
+      "http",
+      "patch-method"
+    ]
+  },
+  {
+    "id": 574,
+    "category": "HTTP",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In HTTP, what is the best description of DELETE method?",
+    "options": [
+      "creating a resource",
+      "requesting removal of a resource",
+      "negotiating TLS only",
+      "retrieving a web page"
+    ],
+    "answer": "requesting removal of a resource",
+    "explanation": "DELETE expresses resource removal.",
+    "tags": [
+      "http",
+      "delete-method"
+    ]
+  },
+  {
+    "id": 575,
+    "category": "HTTP",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In HTTP, what is the best description of 301 status code?",
+    "options": [
+      "unauthorized request",
+      "permanent redirect",
+      "temporary server error",
+      "successful creation"
+    ],
+    "answer": "permanent redirect",
+    "explanation": "301 indicates a permanent redirect.",
+    "tags": [
+      "http",
+      "301-status-code"
+    ]
+  },
+  {
+    "id": 576,
+    "category": "HTTP",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In HTTP, what is the best description of 401 status code?",
+    "options": [
+      "authentication is required or failed",
+      "server overloaded",
+      "resource permanently moved",
+      "request succeeded"
+    ],
+    "answer": "authentication is required or failed",
+    "explanation": "401 relates to authentication.",
+    "tags": [
+      "http",
+      "401-status-code"
+    ]
+  },
+  {
+    "id": 577,
+    "category": "HTTP",
+    "difficulty": "medium",
+    "type": "true_false",
+    "question": "In HTTP, '403 status code' is best understood as authenticated or identified client is not allowed.",
+    "answer": "true",
+    "explanation": "403 is an authorization/access problem.",
+    "tags": [
+      "http",
+      "403-status-code"
+    ]
+  },
+  {
+    "id": 578,
+    "category": "HTTP",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In HTTP, what is the best description of 500 status code?",
+    "options": [
+      "permanent redirect",
+      "successful response",
+      "client sent no credentials",
+      "generic server-side error"
+    ],
+    "answer": "generic server-side error",
+    "explanation": "500 indicates server error.",
+    "tags": [
+      "http",
+      "500-status-code"
+    ]
+  },
+  {
+    "id": 579,
+    "category": "HTTP",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In HTTP, what is the best description of idempotent request?",
+    "options": [
+      "a request that never reaches server",
+      "a response with no body",
+      "a request requiring TLS",
+      "multiple identical requests have the same effect as one"
+    ],
+    "answer": "multiple identical requests have the same effect as one",
+    "explanation": "Idempotency matters for safe retries.",
+    "tags": [
+      "http",
+      "idempotent-request"
+    ]
+  },
+  {
+    "id": 580,
+    "category": "HTTP",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In HTTP, what is the best description of HTTP header?",
+    "options": [
+      "a Git branch",
+      "a disk partition",
+      "metadata sent with a request or response",
+      "a container layer"
+    ],
+    "answer": "metadata sent with a request or response",
+    "explanation": "Headers carry metadata like content type and auth.",
+    "tags": [
+      "http",
+      "http-header"
+    ]
+  },
+  {
+    "id": 581,
+    "category": "HTTP",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In HTTP, what is the best description of Content-Type header?",
+    "options": [
+      "selects a Kubernetes node",
+      "creates a Git tag",
+      "sets the TCP port",
+      "declares the media type of the request or response body"
+    ],
+    "answer": "declares the media type of the request or response body",
+    "explanation": "Content-Type helps receivers parse bodies.",
+    "tags": [
+      "http",
+      "content-type-header"
+    ]
+  },
+  {
+    "id": 582,
+    "category": "HTTP",
+    "difficulty": "hard",
+    "type": "true_false",
+    "question": "In HTTP, 'API rate limiting' is best understood as restricting request volume over time.",
+    "answer": "true",
+    "explanation": "Rate limits protect services from overload.",
+    "tags": [
+      "http",
+      "api-rate-limiting"
+    ]
+  },
+  {
+    "id": 583,
+    "category": "HTTP",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In HTTP, what is the best description of reverse proxy?",
+    "options": [
+      "server that accepts client requests and forwards to backend services",
+      "a CI test runner",
+      "a browser plugin only",
+      "a disk encryption tool"
+    ],
+    "answer": "server that accepts client requests and forwards to backend services",
+    "explanation": "Reverse proxies are common in web architectures.",
+    "tags": [
+      "http",
+      "reverse-proxy"
+    ]
+  },
+  {
+    "id": 584,
+    "category": "HTTP",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In HTTP, what is the best description of TLS termination?",
+    "options": [
+      "ending the TLS connection at a proxy or load balancer",
+      "stopping a container",
+      "deleting certificates",
+      "closing all ports"
+    ],
+    "answer": "ending the TLS connection at a proxy or load balancer",
+    "explanation": "TLS termination centralizes certificate handling.",
+    "tags": [
+      "http",
+      "tls-termination"
+    ]
+  },
+  {
+    "id": 585,
+    "category": "Infrastructure as Code",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Infrastructure as Code, what is the best description of declarative IaC?",
+    "options": [
+      "manual SSH configuration",
+      "a bash-only deployment",
+      "a monitoring dashboard",
+      "describing desired state rather than every procedural step"
+    ],
+    "answer": "describing desired state rather than every procedural step",
+    "explanation": "Declarative tools converge actual state to desired state.",
+    "tags": [
+      "infrastructure-as-code",
+      "declarative-iac"
+    ]
+  },
+  {
+    "id": 586,
+    "category": "Infrastructure as Code",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Infrastructure as Code, what is the best description of Terraform provider?",
+    "options": [
+      "a database schema migration",
+      "a server hostname",
+      "plugin that lets Terraform manage a specific API or platform",
+      "a CI artifact"
+    ],
+    "answer": "plugin that lets Terraform manage a specific API or platform",
+    "explanation": "Providers implement resource interactions.",
+    "tags": [
+      "infrastructure-as-code",
+      "terraform-provider"
+    ]
+  },
+  {
+    "id": 587,
+    "category": "Infrastructure as Code",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Infrastructure as Code, what is the best description of remote state locking?",
+    "options": [
+      "allowing anyone to edit state",
+      "removing backups",
+      "compressing state files only",
+      "preventing simultaneous conflicting Terraform changes"
+    ],
+    "answer": "preventing simultaneous conflicting Terraform changes",
+    "explanation": "Locking protects state consistency.",
+    "tags": [
+      "infrastructure-as-code",
+      "remote-state-locking"
+    ]
+  },
+  {
+    "id": 588,
+    "category": "Infrastructure as Code",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Infrastructure as Code, what is the best description of Ansible inventory?",
+    "options": [
+      "Terraform state output",
+      "list of managed hosts and groups",
+      "Docker image digest",
+      "Prometheus query"
+    ],
+    "answer": "list of managed hosts and groups",
+    "explanation": "Inventory defines Ansible targets.",
+    "tags": [
+      "infrastructure-as-code",
+      "ansible-inventory"
+    ]
+  },
+  {
+    "id": 589,
+    "category": "Infrastructure as Code",
+    "difficulty": "medium",
+    "type": "true_false",
+    "question": "In Infrastructure as Code, 'Ansible role' is best understood as reusable set of tasks, defaults, handlers, and files.",
+    "answer": "true",
+    "explanation": "Roles organize reusable automation.",
+    "tags": [
+      "infrastructure-as-code",
+      "ansible-role"
+    ]
+  },
+  {
+    "id": 590,
+    "category": "Infrastructure as Code",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Infrastructure as Code, what is the best description of Terraform output?",
+    "options": [
+      "a value exported after applying configuration",
+      "a firewall log",
+      "a Linux process ID",
+      "a Docker volume"
+    ],
+    "answer": "a value exported after applying configuration",
+    "explanation": "Outputs expose useful infrastructure values.",
+    "tags": [
+      "infrastructure-as-code",
+      "terraform-output"
+    ]
+  },
+  {
+    "id": 591,
+    "category": "Infrastructure as Code",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Infrastructure as Code, what is the best description of Terraform variable?",
+    "options": [
+      "a TLS certificate chain",
+      "a runtime container PID",
+      "a Git tag only",
+      "input value used to parameterize configuration"
+    ],
+    "answer": "input value used to parameterize configuration",
+    "explanation": "Variables make modules reusable.",
+    "tags": [
+      "infrastructure-as-code",
+      "terraform-variable"
+    ]
+  },
+  {
+    "id": 592,
+    "category": "Infrastructure as Code",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Infrastructure as Code, what is the best description of plan review?",
+    "options": [
+      "deleting state",
+      "ignoring drift",
+      "applying blindly",
+      "reviewing proposed infrastructure changes before apply"
+    ],
+    "answer": "reviewing proposed infrastructure changes before apply",
+    "explanation": "Plan review catches unintended changes.",
+    "tags": [
+      "infrastructure-as-code",
+      "plan-review"
+    ]
+  },
+  {
+    "id": 593,
+    "category": "Infrastructure as Code",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Infrastructure as Code, what is the best description of policy as code?",
+    "options": [
+      "hard-coding passwords",
+      "expressing governance rules in machine-readable form",
+      "manual audit only",
+      "storing policies only in PDFs"
+    ],
+    "answer": "expressing governance rules in machine-readable form",
+    "explanation": "Policy as code automates compliance checks.",
+    "tags": [
+      "infrastructure-as-code",
+      "policy-as-code"
+    ]
+  },
+  {
+    "id": 594,
+    "category": "Infrastructure as Code",
+    "difficulty": "hard",
+    "type": "true_false",
+    "question": "In Infrastructure as Code, 'state drift' is best understood as difference between declared configuration and actual infrastructure.",
+    "answer": "true",
+    "explanation": "Drift should be detected and reconciled.",
+    "tags": [
+      "infrastructure-as-code",
+      "state-drift"
+    ]
+  },
+  {
+    "id": 595,
+    "category": "Infrastructure as Code",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In Infrastructure as Code, what is the best description of immutable infrastructure?",
+    "options": [
+      "replacing systems instead of modifying them in place",
+      "using no images",
+      "editing production manually",
+      "logging into servers for every patch"
+    ],
+    "answer": "replacing systems instead of modifying them in place",
+    "explanation": "Immutable patterns reduce configuration drift.",
+    "tags": [
+      "infrastructure-as-code",
+      "immutable-infrastructure"
+    ]
+  },
+  {
+    "id": 596,
+    "category": "Infrastructure as Code",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In Infrastructure as Code, what is the best description of configuration templating?",
+    "options": [
+      "compiling Java only",
+      "opening all ports",
+      "deleting modules",
+      "generating configs from variables and templates"
+    ],
+    "answer": "generating configs from variables and templates",
+    "explanation": "Templating keeps configs consistent.",
+    "tags": [
+      "infrastructure-as-code",
+      "configuration-templating"
+    ]
+  },
+  {
+    "id": 597,
+    "category": "Kubernetes",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Kubernetes, what is the best description of readiness probe?",
+    "options": [
+      "a node disk scan",
+      "check that restarts a container only",
+      "a Git branch rule",
+      "check that decides whether a pod should receive traffic"
+    ],
+    "answer": "check that decides whether a pod should receive traffic",
+    "explanation": "Readiness gates service traffic.",
+    "tags": [
+      "kubernetes",
+      "readiness-probe"
+    ]
+  },
+  {
+    "id": 598,
+    "category": "Kubernetes",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Kubernetes, what is the best description of liveness probe?",
+    "options": [
+      "a secret encryption key",
+      "a CI trigger",
+      "check for external DNS only",
+      "check that determines whether a container should be restarted"
+    ],
+    "answer": "check that determines whether a container should be restarted",
+    "explanation": "Liveness recovers stuck containers.",
+    "tags": [
+      "kubernetes",
+      "liveness-probe"
+    ]
+  },
+  {
+    "id": 599,
+    "category": "Kubernetes",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Kubernetes, what is the best description of namespace?",
+    "options": [
+      "Git repository branch",
+      "logical partition for grouping Kubernetes resources",
+      "container image layer",
+      "physical server rack"
+    ],
+    "answer": "logical partition for grouping Kubernetes resources",
+    "explanation": "Namespaces organize resources and policies.",
+    "tags": [
+      "kubernetes",
+      "namespace"
+    ]
+  },
+  {
+    "id": 600,
+    "category": "Kubernetes",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Kubernetes, what is the best description of ResourceQuota?",
+    "options": [
+      "policy limiting resource consumption in a namespace",
+      "a container registry",
+      "a service account token",
+      "a pod log file"
+    ],
+    "answer": "policy limiting resource consumption in a namespace",
+    "explanation": "Quotas prevent excessive namespace usage.",
+    "tags": [
+      "kubernetes",
+      "resourcequota"
+    ]
+  },
+  {
+    "id": 601,
+    "category": "Kubernetes",
+    "difficulty": "medium",
+    "type": "true_false",
+    "question": "In Kubernetes, 'LimitRange' is best understood as defaults or bounds for pod/container resource requests and limits.",
+    "answer": "true",
+    "explanation": "LimitRanges support resource governance.",
+    "tags": [
+      "kubernetes",
+      "limitrange"
+    ]
+  },
+  {
+    "id": 602,
+    "category": "Kubernetes",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Kubernetes, what is the best description of Horizontal Pod Autoscaler?",
+    "options": [
+      "backs up etcd only",
+      "encrypts secrets",
+      "changes node labels manually",
+      "scales pod replicas based on metrics"
+    ],
+    "answer": "scales pod replicas based on metrics",
+    "explanation": "HPA adjusts replica count.",
+    "tags": [
+      "kubernetes",
+      "horizontal-pod-autoscaler"
+    ]
+  },
+  {
+    "id": 603,
+    "category": "Kubernetes",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Kubernetes, what is the best description of PersistentVolumeClaim?",
+    "options": [
+      "request for more CPU only",
+      "a container health endpoint",
+      "request for storage by a workload",
+      "a service DNS record"
+    ],
+    "answer": "request for storage by a workload",
+    "explanation": "PVCs bind workloads to storage.",
+    "tags": [
+      "kubernetes",
+      "persistentvolumeclaim"
+    ]
+  },
+  {
+    "id": 604,
+    "category": "Kubernetes",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Kubernetes, what is the best description of ServiceAccount?",
+    "options": [
+      "a cloud billing account",
+      "identity used by pods to access the Kubernetes API",
+      "a Git author field",
+      "a DNS zone"
+    ],
+    "answer": "identity used by pods to access the Kubernetes API",
+    "explanation": "ServiceAccounts support pod-level identity.",
+    "tags": [
+      "kubernetes",
+      "serviceaccount"
+    ]
+  },
+  {
+    "id": 605,
+    "category": "Kubernetes",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Kubernetes, what is the best description of NetworkPolicy?",
+    "options": [
+      "a Dockerfile directive",
+      "a CI environment variable",
+      "rules controlling pod network traffic",
+      "a node image"
+    ],
+    "answer": "rules controlling pod network traffic",
+    "explanation": "NetworkPolicies restrict communication.",
+    "tags": [
+      "kubernetes",
+      "networkpolicy"
+    ]
+  },
+  {
+    "id": 606,
+    "category": "Kubernetes",
+    "difficulty": "hard",
+    "type": "true_false",
+    "question": "In Kubernetes, 'taint and toleration' is best understood as mechanism to repel or allow pods on certain nodes.",
+    "answer": "true",
+    "explanation": "Taints and tolerations control scheduling.",
+    "tags": [
+      "kubernetes",
+      "taint-and-toleration"
+    ]
+  },
+  {
+    "id": 607,
+    "category": "Kubernetes",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In Kubernetes, what is the best description of kubectl rollout undo?",
+    "options": [
+      "command used to roll back a Deployment rollout",
+      "command to open a shell",
+      "command to delete a namespace only",
+      "command to list cloud accounts"
+    ],
+    "answer": "command used to roll back a Deployment rollout",
+    "explanation": "Rollout undo restores a previous ReplicaSet revision.",
+    "tags": [
+      "kubernetes",
+      "kubectl-rollout-undo"
+    ]
+  },
+  {
+    "id": 608,
+    "category": "Kubernetes",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In Kubernetes, what is the best description of Helm chart?",
+    "options": [
+      "a Prometheus alert only",
+      "a Git hosting service",
+      "a container runtime",
+      "package of Kubernetes manifests and templates"
+    ],
+    "answer": "package of Kubernetes manifests and templates",
+    "explanation": "Helm charts package Kubernetes apps.",
+    "tags": [
+      "kubernetes",
+      "helm-chart"
+    ]
+  },
+  {
+    "id": 609,
+    "category": "Linux",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Linux, what is the best description of systemctl status?",
+    "options": [
+      "creating a new user",
+      "editing kernel source",
+      "checking the state of a systemd service",
+      "formatting a disk"
+    ],
+    "answer": "checking the state of a systemd service",
+    "explanation": "systemctl status shows unit state and recent logs.",
+    "tags": [
+      "linux",
+      "systemctl-status"
+    ]
+  },
+  {
+    "id": 610,
+    "category": "Linux",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Linux, what is the best description of journalctl -f?",
+    "options": [
+      "formatting a filesystem",
+      "following system journal logs in real time",
+      "changing permissions",
+      "finding files by name"
+    ],
+    "answer": "following system journal logs in real time",
+    "explanation": "journalctl -f streams new log entries.",
+    "tags": [
+      "linux",
+      "journalctl--f"
+    ]
+  },
+  {
+    "id": 611,
+    "category": "Linux",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Linux, what is the best description of ss -tulpn?",
+    "options": [
+      "syncing files",
+      "changing SELinux context",
+      "showing listening TCP/UDP sockets and owning processes",
+      "listing users"
+    ],
+    "answer": "showing listening TCP/UDP sockets and owning processes",
+    "explanation": "ss helps troubleshoot ports.",
+    "tags": [
+      "linux",
+      "ss--tulpn"
+    ]
+  },
+  {
+    "id": 612,
+    "category": "Linux",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Linux, what is the best description of df -h?",
+    "options": [
+      "displaying process tree",
+      "showing filesystem free space in human-readable form",
+      "editing a file",
+      "showing directory contents only"
+    ],
+    "answer": "showing filesystem free space in human-readable form",
+    "explanation": "df reports mounted filesystem capacity.",
+    "tags": [
+      "linux",
+      "df--h"
+    ]
+  },
+  {
+    "id": 613,
+    "category": "Linux",
+    "difficulty": "medium",
+    "type": "true_false",
+    "question": "In Linux, 'du -sh' is best understood as summarizing disk usage for a path.",
+    "answer": "true",
+    "explanation": "du measures file/directory usage.",
+    "tags": [
+      "linux",
+      "du--sh"
+    ]
+  },
+  {
+    "id": 614,
+    "category": "Linux",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Linux, what is the best description of chown?",
+    "options": [
+      "changing file mode bits only",
+      "creating archives",
+      "viewing logs",
+      "changing file owner or group"
+    ],
+    "answer": "changing file owner or group",
+    "explanation": "chown changes ownership.",
+    "tags": [
+      "linux",
+      "chown"
+    ]
+  },
+  {
+    "id": 615,
+    "category": "Linux",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Linux, what is the best description of chmod symbolic mode?",
+    "options": [
+      "changing permissions using expressions like u+x",
+      "changing user passwords",
+      "restarting services",
+      "mounting NFS"
+    ],
+    "answer": "changing permissions using expressions like u+x",
+    "explanation": "Symbolic chmod is readable for permission changes.",
+    "tags": [
+      "linux",
+      "chmod-symbolic-mode"
+    ]
+  },
+  {
+    "id": 616,
+    "category": "Linux",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Linux, what is the best description of tar archive?",
+    "options": [
+      "testing latency",
+      "changing SELinux mode",
+      "querying DNS",
+      "bundling files into an archive"
+    ],
+    "answer": "bundling files into an archive",
+    "explanation": "tar archives files and can combine with compression.",
+    "tags": [
+      "linux",
+      "tar-archive"
+    ]
+  },
+  {
+    "id": 617,
+    "category": "Linux",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Linux, what is the best description of systemd timer?",
+    "options": [
+      "a shell variable",
+      "systemd unit type for scheduled jobs",
+      "a filesystem driver",
+      "a Git hook"
+    ],
+    "answer": "systemd unit type for scheduled jobs",
+    "explanation": "Timers can replace some cron jobs.",
+    "tags": [
+      "linux",
+      "systemd-timer"
+    ]
+  },
+  {
+    "id": 618,
+    "category": "Linux",
+    "difficulty": "hard",
+    "type": "true_false",
+    "question": "In Linux, 'logrotate' is best understood as rotating and compressing log files.",
+    "answer": "true",
+    "explanation": "logrotate manages log growth.",
+    "tags": [
+      "linux",
+      "logrotate"
+    ]
+  },
+  {
+    "id": 619,
+    "category": "Linux",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In Linux, what is the best description of SELinux context?",
+    "options": [
+      "a DNS suffix",
+      "a Docker tag",
+      "a Git commit label",
+      "security label used by SELinux access decisions"
+    ],
+    "answer": "security label used by SELinux access decisions",
+    "explanation": "SELinux labels affect access control.",
+    "tags": [
+      "linux",
+      "selinux-context"
+    ]
+  },
+  {
+    "id": 620,
+    "category": "Linux",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In Linux, what is the best description of exit code?",
+    "options": [
+      "container image ID only",
+      "numeric status returned by a command",
+      "disk serial number",
+      "IP subnet prefix"
+    ],
+    "answer": "numeric status returned by a command",
+    "explanation": "Exit codes drive automation decisions.",
+    "tags": [
+      "linux",
+      "exit-code"
+    ]
+  },
+  {
+    "id": 621,
+    "category": "Networking",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Networking, what is the best description of CIDR /24?",
+    "options": [
+      "network prefix representing 256 IPv4 addresses",
+      "an HTTP success code",
+      "a Git branch name",
+      "a TLS cipher"
+    ],
+    "answer": "network prefix representing 256 IPv4 addresses",
+    "explanation": "CIDR prefixes define address ranges.",
+    "tags": [
+      "networking",
+      "cidr-/24"
+    ]
+  },
+  {
+    "id": 622,
+    "category": "Networking",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Networking, what is the best description of NAT?",
+    "options": [
+      "building images",
+      "testing code coverage",
+      "encrypting files",
+      "translating network addresses between networks"
+    ],
+    "answer": "translating network addresses between networks",
+    "explanation": "NAT commonly allows private hosts to reach external networks.",
+    "tags": [
+      "networking",
+      "nat"
+    ]
+  },
+  {
+    "id": 623,
+    "category": "Networking",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Networking, what is the best description of TCP three-way handshake?",
+    "options": [
+      "build, test, deploy",
+      "SYN, SYN-ACK, ACK connection setup",
+      "GET, POST, PUT",
+      "read, write, execute"
+    ],
+    "answer": "SYN, SYN-ACK, ACK connection setup",
+    "explanation": "TCP establishes connections with a handshake.",
+    "tags": [
+      "networking",
+      "tcp-three-way-handshake"
+    ]
+  },
+  {
+    "id": 624,
+    "category": "Networking",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Networking, what is the best description of DNS TTL?",
+    "options": [
+      "TLS key size",
+      "time a DNS response may be cached",
+      "container CPU quota",
+      "HTTP body length"
+    ],
+    "answer": "time a DNS response may be cached",
+    "explanation": "TTL affects DNS propagation and caching.",
+    "tags": [
+      "networking",
+      "dns-ttl"
+    ]
+  },
+  {
+    "id": 625,
+    "category": "Networking",
+    "difficulty": "medium",
+    "type": "true_false",
+    "question": "In Networking, 'MTU' is best understood as maximum transmission unit for a network link.",
+    "answer": "true",
+    "explanation": "MTU impacts packet fragmentation.",
+    "tags": [
+      "networking",
+      "mtu"
+    ]
+  },
+  {
+    "id": 626,
+    "category": "Networking",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Networking, what is the best description of traceroute?",
+    "options": [
+      "Git history rewrite",
+      "tool showing path packets take toward a destination",
+      "tool for editing files",
+      "container registry login"
+    ],
+    "answer": "tool showing path packets take toward a destination",
+    "explanation": "Traceroute helps locate network path issues.",
+    "tags": [
+      "networking",
+      "traceroute"
+    ]
+  },
+  {
+    "id": 627,
+    "category": "Networking",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Networking, what is the best description of reverse DNS?",
+    "options": [
+      "translating YAML to JSON",
+      "reversing a Git commit",
+      "routing HTTP to HTTPS",
+      "mapping an IP address back to a hostname"
+    ],
+    "answer": "mapping an IP address back to a hostname",
+    "explanation": "PTR records support reverse lookup.",
+    "tags": [
+      "networking",
+      "reverse-dns"
+    ]
+  },
+  {
+    "id": 628,
+    "category": "Networking",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Networking, what is the best description of L4 load balancing?",
+    "options": [
+      "traffic distribution based on transport-layer information",
+      "container scanning",
+      "HTML rendering",
+      "source-code merging"
+    ],
+    "answer": "traffic distribution based on transport-layer information",
+    "explanation": "Layer 4 uses TCP/UDP-level data.",
+    "tags": [
+      "networking",
+      "l4-load-balancing"
+    ]
+  },
+  {
+    "id": 629,
+    "category": "Networking",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Networking, what is the best description of L7 load balancing?",
+    "options": [
+      "SSH key generation",
+      "disk partitioning",
+      "traffic routing based on application-layer data such as HTTP path",
+      "kernel scheduling"
+    ],
+    "answer": "traffic routing based on application-layer data such as HTTP path",
+    "explanation": "Layer 7 routing can inspect HTTP data.",
+    "tags": [
+      "networking",
+      "l7-load-balancing"
+    ]
+  },
+  {
+    "id": 630,
+    "category": "Networking",
+    "difficulty": "hard",
+    "type": "true_false",
+    "question": "In Networking, 'firewall default deny' is best understood as blocking traffic unless explicitly allowed.",
+    "answer": "true",
+    "explanation": "Default deny is safer.",
+    "tags": [
+      "networking",
+      "firewall-default-deny"
+    ]
+  },
+  {
+    "id": 631,
+    "category": "Networking",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In Networking, what is the best description of subnet route table?",
+    "options": [
+      "a Git ignore file",
+      "a CI artifact manifest",
+      "rules deciding where subnet traffic is sent",
+      "a Linux password file"
+    ],
+    "answer": "rules deciding where subnet traffic is sent",
+    "explanation": "Route tables control packet forwarding.",
+    "tags": [
+      "networking",
+      "subnet-route-table"
+    ]
+  },
+  {
+    "id": 632,
+    "category": "Networking",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In Networking, what is the best description of health-based load balancing?",
+    "options": [
+      "sending traffic only to healthy backends",
+      "randomly deleting servers",
+      "using no health checks",
+      "ignoring upstream status"
+    ],
+    "answer": "sending traffic only to healthy backends",
+    "explanation": "Health checks improve availability.",
+    "tags": [
+      "networking",
+      "health-based-load-balancing"
+    ]
+  },
+  {
+    "id": 633,
+    "category": "Observability",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Observability, what is the best description of service-level indicator?",
+    "options": [
+      "container entrypoint",
+      "Git hook",
+      "contract penalty only",
+      "measured value representing service behavior"
+    ],
+    "answer": "measured value representing service behavior",
+    "explanation": "SLIs quantify reliability.",
+    "tags": [
+      "observability",
+      "service-level-indicator"
+    ]
+  },
+  {
+    "id": 634,
+    "category": "Observability",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Observability, what is the best description of service-level objective?",
+    "options": [
+      "target value for an SLI over time",
+      "a local shell prompt",
+      "a CPU instruction",
+      "a Docker tag"
+    ],
+    "answer": "target value for an SLI over time",
+    "explanation": "SLOs define reliability goals.",
+    "tags": [
+      "observability",
+      "service-level-objective"
+    ]
+  },
+  {
+    "id": 635,
+    "category": "Observability",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Observability, what is the best description of error budget?",
+    "options": [
+      "log file size only",
+      "cash budget for servers",
+      "allowable unreliability before violating an SLO",
+      "number of users"
+    ],
+    "answer": "allowable unreliability before violating an SLO",
+    "explanation": "Error budgets guide release risk.",
+    "tags": [
+      "observability",
+      "error-budget"
+    ]
+  },
+  {
+    "id": 636,
+    "category": "Observability",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Observability, what is the best description of high-cardinality label?",
+    "options": [
+      "a label with only two values",
+      "label with many possible values that can increase metric cost",
+      "a Kubernetes namespace limit",
+      "a Git tag pattern"
+    ],
+    "answer": "label with many possible values that can increase metric cost",
+    "explanation": "High cardinality can stress metrics systems.",
+    "tags": [
+      "observability",
+      "high-cardinality-label"
+    ]
+  },
+  {
+    "id": 637,
+    "category": "Observability",
+    "difficulty": "medium",
+    "type": "true_false",
+    "question": "In Observability, 'structured logging' is best understood as logs emitted with machine-parseable fields.",
+    "answer": "true",
+    "explanation": "Structured logs improve querying.",
+    "tags": [
+      "observability",
+      "structured-logging"
+    ]
+  },
+  {
+    "id": 638,
+    "category": "Observability",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Observability, what is the best description of correlation ID?",
+    "options": [
+      "identifier used to follow a request across services",
+      "a CPU core number",
+      "a cloud account password",
+      "a container image tag only"
+    ],
+    "answer": "identifier used to follow a request across services",
+    "explanation": "Correlation IDs connect logs across systems.",
+    "tags": [
+      "observability",
+      "correlation-id"
+    ]
+  },
+  {
+    "id": 639,
+    "category": "Observability",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Observability, what is the best description of alert fatigue?",
+    "options": [
+      "a storage feature",
+      "reduced responsiveness caused by too many noisy alerts",
+      "a Git conflict type",
+      "a faster incident response"
+    ],
+    "answer": "reduced responsiveness caused by too many noisy alerts",
+    "explanation": "Good alert design reduces fatigue.",
+    "tags": [
+      "observability",
+      "alert-fatigue"
+    ]
+  },
+  {
+    "id": 640,
+    "category": "Observability",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Observability, what is the best description of runbook link in alert?",
+    "options": [
+      "hiding all context",
+      "including remediation guidance with alert notifications",
+      "turning alerts into emails only",
+      "deleting dashboards"
+    ],
+    "answer": "including remediation guidance with alert notifications",
+    "explanation": "Runbooks help responders act quickly.",
+    "tags": [
+      "observability",
+      "runbook-link-in-alert"
+    ]
+  },
+  {
+    "id": 641,
+    "category": "Observability",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Observability, what is the best description of golden signals?",
+    "options": [
+      "GET, POST, PUT, DELETE",
+      "CPU, disk, keyboard, mouse",
+      "latency, traffic, errors, and saturation",
+      "commit, branch, tag, merge"
+    ],
+    "answer": "latency, traffic, errors, and saturation",
+    "explanation": "Golden signals are common SRE monitoring signals.",
+    "tags": [
+      "observability",
+      "golden-signals"
+    ]
+  },
+  {
+    "id": 642,
+    "category": "Observability",
+    "difficulty": "hard",
+    "type": "true_false",
+    "question": "In Observability, 'distributed trace span' is best understood as timed unit of work within a trace.",
+    "answer": "true",
+    "explanation": "Spans compose traces across services.",
+    "tags": [
+      "observability",
+      "distributed-trace-span"
+    ]
+  },
+  {
+    "id": 643,
+    "category": "Observability",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In Observability, what is the best description of log sampling?",
+    "options": [
+      "deleting all errors",
+      "recording a subset of log events to manage volume",
+      "increasing every log level",
+      "turning off timestamps"
+    ],
+    "answer": "recording a subset of log events to manage volume",
+    "explanation": "Sampling controls cost and volume.",
+    "tags": [
+      "observability",
+      "log-sampling"
+    ]
+  },
+  {
+    "id": 644,
+    "category": "Observability",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In Observability, what is the best description of on-call alert routing?",
+    "options": [
+      "a static website route",
+      "random notification delivery",
+      "a database index",
+      "sending alerts to the correct responder or escalation path"
+    ],
+    "answer": "sending alerts to the correct responder or escalation path",
+    "explanation": "Routing reduces response delays.",
+    "tags": [
+      "observability",
+      "on-call-alert-routing"
+    ]
+  },
+  {
+    "id": 645,
+    "category": "Release",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Release, what is the best description of release candidate?",
+    "options": [
+      "a local Git stash",
+      "build considered ready for final validation",
+      "a deleted artifact",
+      "a random dev snapshot"
+    ],
+    "answer": "build considered ready for final validation",
+    "explanation": "RCs are tested before final release.",
+    "tags": [
+      "release",
+      "release-candidate"
+    ]
+  },
+  {
+    "id": 646,
+    "category": "Release",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Release, what is the best description of feature freeze?",
+    "options": [
+      "turning off all features",
+      "period where new features pause to stabilize a release",
+      "removing tests",
+      "deleting old branches"
+    ],
+    "answer": "period where new features pause to stabilize a release",
+    "explanation": "Freezes focus on bug fixes and release readiness.",
+    "tags": [
+      "release",
+      "feature-freeze"
+    ]
+  },
+  {
+    "id": 647,
+    "category": "Release",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Release, what is the best description of dark launch?",
+    "options": [
+      "running only locally",
+      "deleting production traffic",
+      "deploying code without exposing functionality to users",
+      "disabling monitoring"
+    ],
+    "answer": "deploying code without exposing functionality to users",
+    "explanation": "Dark launches reduce release risk.",
+    "tags": [
+      "release",
+      "dark-launch"
+    ]
+  },
+  {
+    "id": 648,
+    "category": "Release",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Release, what is the best description of progressive delivery?",
+    "options": [
+      "all-at-once unmanaged rollout",
+      "manual copying only",
+      "skipping canaries",
+      "gradually exposing changes with controls and telemetry"
+    ],
+    "answer": "gradually exposing changes with controls and telemetry",
+    "explanation": "Progressive delivery uses flags, canaries, and metrics.",
+    "tags": [
+      "release",
+      "progressive-delivery"
+    ]
+  },
+  {
+    "id": 649,
+    "category": "Release",
+    "difficulty": "medium",
+    "type": "true_false",
+    "question": "In Release, 'release notes' is best understood as document describing changes in a release.",
+    "answer": "true",
+    "explanation": "Release notes communicate impact.",
+    "tags": [
+      "release",
+      "release-notes"
+    ]
+  },
+  {
+    "id": 650,
+    "category": "Release",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Release, what is the best description of hotfix release?",
+    "options": [
+      "a synthetic monitor",
+      "planned quarterly feature only",
+      "a container registry",
+      "urgent fix released outside normal cadence"
+    ],
+    "answer": "urgent fix released outside normal cadence",
+    "explanation": "Hotfixes address urgent issues.",
+    "tags": [
+      "release",
+      "hotfix-release"
+    ]
+  },
+  {
+    "id": 651,
+    "category": "Release",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Release, what is the best description of version pinning?",
+    "options": [
+      "using a specific dependency or artifact version",
+      "ignoring compatibility",
+      "always using latest blindly",
+      "deleting lock files"
+    ],
+    "answer": "using a specific dependency or artifact version",
+    "explanation": "Pinning improves reproducibility.",
+    "tags": [
+      "release",
+      "version-pinning"
+    ]
+  },
+  {
+    "id": 652,
+    "category": "Release",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Release, what is the best description of rollback criterion?",
+    "options": [
+      "a code formatter",
+      "condition that triggers reverting a release",
+      "a reason to ignore metrics",
+      "a DNS cache entry"
+    ],
+    "answer": "condition that triggers reverting a release",
+    "explanation": "Predefined criteria speed decisions.",
+    "tags": [
+      "release",
+      "rollback-criterion"
+    ]
+  },
+  {
+    "id": 653,
+    "category": "Release",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Release, what is the best description of change window?",
+    "options": [
+      "approved time period for changes",
+      "a Dockerfile instruction",
+      "a branch naming convention",
+      "a database table column"
+    ],
+    "answer": "approved time period for changes",
+    "explanation": "Change windows manage operational risk.",
+    "tags": [
+      "release",
+      "change-window"
+    ]
+  },
+  {
+    "id": 654,
+    "category": "Release",
+    "difficulty": "hard",
+    "type": "true_false",
+    "question": "In Release, 'release train' is best understood as scheduled cadence for grouping releases.",
+    "answer": "true",
+    "explanation": "Release trains provide predictable delivery.",
+    "tags": [
+      "release",
+      "release-train"
+    ]
+  },
+  {
+    "id": 655,
+    "category": "Release",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In Release, what is the best description of deployment freeze?",
+    "options": [
+      "temporary pause on production changes",
+      "running all tests locally only",
+      "turning off auth",
+      "deleting pipeline history"
+    ],
+    "answer": "temporary pause on production changes",
+    "explanation": "Freezes protect critical periods.",
+    "tags": [
+      "release",
+      "deployment-freeze"
+    ]
+  },
+  {
+    "id": 656,
+    "category": "Release",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In Release, what is the best description of backward compatibility?",
+    "options": [
+      "removing observability",
+      "always breaking APIs",
+      "changing passwords daily",
+      "new version works with previous clients or data contracts"
+    ],
+    "answer": "new version works with previous clients or data contracts",
+    "explanation": "Compatibility reduces rollout risk.",
+    "tags": [
+      "release",
+      "backward-compatibility"
+    ]
+  },
+  {
+    "id": 657,
+    "category": "Reliability",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Reliability, what is the best description of RTO?",
+    "options": [
+      "maximum acceptable time to restore service",
+      "container start command",
+      "maximum data loss tolerance",
+      "network packet size"
+    ],
+    "answer": "maximum acceptable time to restore service",
+    "explanation": "RTO is recovery time objective.",
+    "tags": [
+      "reliability",
+      "rto"
+    ]
+  },
+  {
+    "id": 658,
+    "category": "Reliability",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Reliability, what is the best description of RPO?",
+    "options": [
+      "Git review time",
+      "maximum acceptable data loss measured in time",
+      "time to restore compute",
+      "HTTP error class"
+    ],
+    "answer": "maximum acceptable data loss measured in time",
+    "explanation": "RPO is recovery point objective.",
+    "tags": [
+      "reliability",
+      "rpo"
+    ]
+  },
+  {
+    "id": 659,
+    "category": "Reliability",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Reliability, what is the best description of graceful degradation?",
+    "options": [
+      "continuing reduced service when dependencies fail",
+      "ignoring dependency failures",
+      "deleting queues",
+      "complete shutdown on minor issue"
+    ],
+    "answer": "continuing reduced service when dependencies fail",
+    "explanation": "Graceful degradation protects user experience.",
+    "tags": [
+      "reliability",
+      "graceful-degradation"
+    ]
+  },
+  {
+    "id": 660,
+    "category": "Reliability",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Reliability, what is the best description of bulkhead pattern?",
+    "options": [
+      "using one giant queue",
+      "sharing one credential",
+      "combining all workloads",
+      "isolating resources so one failure does not sink everything"
+    ],
+    "answer": "isolating resources so one failure does not sink everything",
+    "explanation": "Bulkheads limit blast radius.",
+    "tags": [
+      "reliability",
+      "bulkhead-pattern"
+    ]
+  },
+  {
+    "id": 661,
+    "category": "Reliability",
+    "difficulty": "medium",
+    "type": "true_false",
+    "question": "In Reliability, 'rate limiting for resilience' is best understood as controlling request volume to protect services.",
+    "answer": "true",
+    "explanation": "Rate limits prevent overload.",
+    "tags": [
+      "reliability",
+      "rate-limiting-for-resilience"
+    ]
+  },
+  {
+    "id": 662,
+    "category": "Reliability",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Reliability, what is the best description of queue-based load leveling?",
+    "options": [
+      "bypassing workers",
+      "processing every spike synchronously",
+      "dropping all requests",
+      "using queues to smooth spikes in work"
+    ],
+    "answer": "using queues to smooth spikes in work",
+    "explanation": "Queues absorb bursts.",
+    "tags": [
+      "reliability",
+      "queue-based-load-leveling"
+    ]
+  },
+  {
+    "id": 663,
+    "category": "Reliability",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Reliability, what is the best description of failover?",
+    "options": [
+      "switching to standby resources after failure",
+      "deleting the failed system only",
+      "disabling DNS",
+      "turning off backups"
+    ],
+    "answer": "switching to standby resources after failure",
+    "explanation": "Failover preserves availability.",
+    "tags": [
+      "reliability",
+      "failover"
+    ]
+  },
+  {
+    "id": 664,
+    "category": "Reliability",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Reliability, what is the best description of dependency timeout?",
+    "options": [
+      "maximum wait time before abandoning a slow call",
+      "retrying without limits",
+      "ignoring latency",
+      "waiting forever"
+    ],
+    "answer": "maximum wait time before abandoning a slow call",
+    "explanation": "Timeouts prevent thread exhaustion.",
+    "tags": [
+      "reliability",
+      "dependency-timeout"
+    ]
+  },
+  {
+    "id": 665,
+    "category": "Reliability",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Reliability, what is the best description of cascading failure?",
+    "options": [
+      "failure spreading across dependent systems",
+      "normal log rotation",
+      "isolated harmless failure",
+      "successful blue-green switch"
+    ],
+    "answer": "failure spreading across dependent systems",
+    "explanation": "Isolation and backpressure reduce cascading failures.",
+    "tags": [
+      "reliability",
+      "cascading-failure"
+    ]
+  },
+  {
+    "id": 666,
+    "category": "Reliability",
+    "difficulty": "hard",
+    "type": "true_false",
+    "question": "In Reliability, 'capacity planning' is best understood as estimating resources needed for expected load.",
+    "answer": "true",
+    "explanation": "Capacity planning prevents saturation.",
+    "tags": [
+      "reliability",
+      "capacity-planning"
+    ]
+  },
+  {
+    "id": 667,
+    "category": "Reliability",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In Reliability, what is the best description of multi-region resilience?",
+    "options": [
+      "deploying only one instance",
+      "skipping backups",
+      "using a single AZ only",
+      "designing service to survive regional failures"
+    ],
+    "answer": "designing service to survive regional failures",
+    "explanation": "Multi-region can improve availability.",
+    "tags": [
+      "reliability",
+      "multi-region-resilience"
+    ]
+  },
+  {
+    "id": 668,
+    "category": "Security",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Security, what is the best description of secret rotation?",
+    "options": [
+      "sharing passwords in chat",
+      "hard-coding tokens",
+      "periodically replacing credentials or keys",
+      "removing MFA"
+    ],
+    "answer": "periodically replacing credentials or keys",
+    "explanation": "Rotation reduces exposure duration.",
+    "tags": [
+      "security",
+      "secret-rotation"
+    ]
+  },
+  {
+    "id": 669,
+    "category": "Security",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Security, what is the best description of SAST?",
+    "options": [
+      "runtime traffic routing",
+      "static analysis of source code for security issues",
+      "manual server reboot",
+      "disk encryption only"
+    ],
+    "answer": "static analysis of source code for security issues",
+    "explanation": "SAST runs before execution.",
+    "tags": [
+      "security",
+      "sast"
+    ]
+  },
+  {
+    "id": 670,
+    "category": "Security",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Security, what is the best description of DAST?",
+    "options": [
+      "source-only linting",
+      "image compression",
+      "Git branch deletion",
+      "dynamic testing of running applications for vulnerabilities"
+    ],
+    "answer": "dynamic testing of running applications for vulnerabilities",
+    "explanation": "DAST tests runtime behavior.",
+    "tags": [
+      "security",
+      "dast"
+    ]
+  },
+  {
+    "id": 671,
+    "category": "Security",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Security, what is the best description of dependency scanning?",
+    "options": [
+      "turning off package locks",
+      "ignoring CVEs",
+      "checking third-party packages for known vulnerabilities",
+      "renaming libraries"
+    ],
+    "answer": "checking third-party packages for known vulnerabilities",
+    "explanation": "Dependency scanning catches vulnerable components.",
+    "tags": [
+      "security",
+      "dependency-scanning"
+    ]
+  },
+  {
+    "id": 672,
+    "category": "Security",
+    "difficulty": "medium",
+    "type": "true_false",
+    "question": "In Security, 'container image signing' is best understood as cryptographically proving image origin or integrity.",
+    "answer": "true",
+    "explanation": "Signing supports trusted deployment.",
+    "tags": [
+      "security",
+      "container-image-signing"
+    ]
+  },
+  {
+    "id": 673,
+    "category": "Security",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Security, what is the best description of zero trust?",
+    "options": [
+      "sharing admin accounts",
+      "using no logs",
+      "trusting internal network by default",
+      "never implicitly trusting users or networks; verify explicitly"
+    ],
+    "answer": "never implicitly trusting users or networks; verify explicitly",
+    "explanation": "Zero trust emphasizes verification.",
+    "tags": [
+      "security",
+      "zero-trust"
+    ]
+  },
+  {
+    "id": 674,
+    "category": "Security",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Security, what is the best description of RBAC?",
+    "options": [
+      "random backup archive copy",
+      "role-based access control",
+      "runtime binary access cache",
+      "remote branch auto cleanup"
+    ],
+    "answer": "role-based access control",
+    "explanation": "RBAC maps permissions to roles.",
+    "tags": [
+      "security",
+      "rbac"
+    ]
+  },
+  {
+    "id": 675,
+    "category": "Security",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Security, what is the best description of break-glass account?",
+    "options": [
+      "public password",
+      "unlogged production access",
+      "emergency access account with strict controls and auditing",
+      "daily shared admin login"
+    ],
+    "answer": "emergency access account with strict controls and auditing",
+    "explanation": "Break-glass access is exceptional and monitored.",
+    "tags": [
+      "security",
+      "break-glass-account"
+    ]
+  },
+  {
+    "id": 676,
+    "category": "Security",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Security, what is the best description of certificate expiration monitoring?",
+    "options": [
+      "alerts before TLS certificates expire",
+      "waiting for outages",
+      "disabling TLS",
+      "ignoring browser errors"
+    ],
+    "answer": "alerts before TLS certificates expire",
+    "explanation": "Certificate monitoring prevents downtime.",
+    "tags": [
+      "security",
+      "certificate-expiration-monitoring"
+    ]
+  },
+  {
+    "id": 677,
+    "category": "Security",
+    "difficulty": "hard",
+    "type": "true_false",
+    "question": "In Security, 'audit trail' is best understood as record of security-relevant actions.",
+    "answer": "true",
+    "explanation": "Audit trails support investigations.",
+    "tags": [
+      "security",
+      "audit-trail"
+    ]
+  },
+  {
+    "id": 678,
+    "category": "Security",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In Security, what is the best description of vulnerability severity?",
+    "options": [
+      "rating used to prioritize remediation",
+      "a Git alias",
+      "a cloud region name",
+      "a Docker network"
+    ],
+    "answer": "rating used to prioritize remediation",
+    "explanation": "Severity helps prioritize fixes.",
+    "tags": [
+      "security",
+      "vulnerability-severity"
+    ]
+  },
+  {
+    "id": 679,
+    "category": "Testing",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Testing, what is the best description of contract test?",
+    "options": [
+      "checks disk free space",
+      "verifies that service API expectations between producer and consumer are met",
+      "tests only CSS colors",
+      "creates Git tags"
+    ],
+    "answer": "verifies that service API expectations between producer and consumer are met",
+    "explanation": "Contract tests reduce integration breakage.",
+    "tags": [
+      "testing",
+      "contract-test"
+    ]
+  },
+  {
+    "id": 680,
+    "category": "Testing",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Testing, what is the best description of smoke test?",
+    "options": [
+      "quick basic test to confirm a build or deployment works",
+      "exhaustive performance test",
+      "security penetration test only",
+      "manual code review"
+    ],
+    "answer": "quick basic test to confirm a build or deployment works",
+    "explanation": "Smoke tests provide quick confidence.",
+    "tags": [
+      "testing",
+      "smoke-test"
+    ]
+  },
+  {
+    "id": 681,
+    "category": "Testing",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Testing, what is the best description of regression test?",
+    "options": [
+      "network packet capture",
+      "test run only on brand-new features",
+      "test ensuring old behavior still works after changes",
+      "database backup"
+    ],
+    "answer": "test ensuring old behavior still works after changes",
+    "explanation": "Regression tests catch unintended breakage.",
+    "tags": [
+      "testing",
+      "regression-test"
+    ]
+  },
+  {
+    "id": 682,
+    "category": "Testing",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Testing, what is the best description of load test?",
+    "options": [
+      "unit test of one function only",
+      "Git merge validation only",
+      "evaluates behavior under expected or high traffic",
+      "syntax check"
+    ],
+    "answer": "evaluates behavior under expected or high traffic",
+    "explanation": "Load tests reveal capacity limits.",
+    "tags": [
+      "testing",
+      "load-test"
+    ]
+  },
+  {
+    "id": 683,
+    "category": "Testing",
+    "difficulty": "medium",
+    "type": "true_false",
+    "question": "In Testing, 'stress test' is best understood as pushes system beyond normal limits to find breaking points.",
+    "answer": "true",
+    "explanation": "Stress tests expose failure modes.",
+    "tags": [
+      "testing",
+      "stress-test"
+    ]
+  },
+  {
+    "id": 684,
+    "category": "Testing",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Testing, what is the best description of test fixture?",
+    "options": [
+      "random user traffic",
+      "known setup or data used by tests",
+      "container registry",
+      "production-only credential"
+    ],
+    "answer": "known setup or data used by tests",
+    "explanation": "Fixtures improve repeatability.",
+    "tags": [
+      "testing",
+      "test-fixture"
+    ]
+  },
+  {
+    "id": 685,
+    "category": "Testing",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Testing, what is the best description of mock object?",
+    "options": [
+      "Git branch",
+      "cloud billing report",
+      "test double simulating a dependency",
+      "real production dependency only"
+    ],
+    "answer": "test double simulating a dependency",
+    "explanation": "Mocks isolate units under test.",
+    "tags": [
+      "testing",
+      "mock-object"
+    ]
+  },
+  {
+    "id": 686,
+    "category": "Testing",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Testing, what is the best description of flaky test?",
+    "options": [
+      "manual checklist only",
+      "always reliable test",
+      "test that passes and fails inconsistently without code changes",
+      "security scan result"
+    ],
+    "answer": "test that passes and fails inconsistently without code changes",
+    "explanation": "Flaky tests reduce trust in pipelines.",
+    "tags": [
+      "testing",
+      "flaky-test"
+    ]
+  },
+  {
+    "id": 687,
+    "category": "Testing",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Testing, what is the best description of performance benchmark?",
+    "options": [
+      "changing firewall rules",
+      "measuring speed or resource use under defined conditions",
+      "deleting logs",
+      "renaming artifacts"
+    ],
+    "answer": "measuring speed or resource use under defined conditions",
+    "explanation": "Benchmarks track performance regressions.",
+    "tags": [
+      "testing",
+      "performance-benchmark"
+    ]
+  },
+  {
+    "id": 688,
+    "category": "Testing",
+    "difficulty": "hard",
+    "type": "true_false",
+    "question": "In Testing, 'test pyramid' is best understood as model favoring many unit tests, fewer integration and E2E tests.",
+    "answer": "true",
+    "explanation": "The pyramid balances speed and coverage.",
+    "tags": [
+      "testing",
+      "test-pyramid"
+    ]
+  },
+  {
+    "id": 689,
+    "category": "Testing",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In Testing, what is the best description of test data management?",
+    "options": [
+      "using production secrets in tests",
+      "editing binaries",
+      "creating and controlling data used in tests",
+      "ignoring cleanup"
+    ],
+    "answer": "creating and controlling data used in tests",
+    "explanation": "Good test data improves reliability and safety.",
+    "tags": [
+      "testing",
+      "test-data-management"
+    ]
+  },
+  {
+    "id": 690,
+    "category": "Version Control",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Version Control, what is the best description of git tag?",
+    "options": [
+      "named reference often used to mark releases",
+      "a container runtime",
+      "a DNS record",
+      "a Linux permission bit"
+    ],
+    "answer": "named reference often used to mark releases",
+    "explanation": "Tags identify important commits.",
+    "tags": [
+      "version-control",
+      "git-tag"
+    ]
+  },
+  {
+    "id": 691,
+    "category": "Version Control",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Version Control, what is the best description of git revert?",
+    "options": [
+      "deleting history silently",
+      "downloading a repository",
+      "renaming a branch",
+      "creating a new commit that undoes earlier changes"
+    ],
+    "answer": "creating a new commit that undoes earlier changes",
+    "explanation": "Revert is safer for shared history than reset.",
+    "tags": [
+      "version-control",
+      "git-revert"
+    ]
+  },
+  {
+    "id": 692,
+    "category": "Version Control",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Version Control, what is the best description of git reset --hard?",
+    "options": [
+      "showing remote branches",
+      "moving HEAD and discarding working tree changes",
+      "creating a pull request",
+      "compressing objects only"
+    ],
+    "answer": "moving HEAD and discarding working tree changes",
+    "explanation": "Hard reset can destroy uncommitted work.",
+    "tags": [
+      "version-control",
+      "git-reset---hard"
+    ]
+  },
+  {
+    "id": 693,
+    "category": "Version Control",
+    "difficulty": "easy",
+    "type": "mcq",
+    "question": "In Version Control, what is the best description of protected branch?",
+    "options": [
+      "a local-only tag",
+      "a binary artifact",
+      "branch with rules such as required reviews or checks",
+      "a branch no one can clone"
+    ],
+    "answer": "branch with rules such as required reviews or checks",
+    "explanation": "Protection prevents unsafe changes.",
+    "tags": [
+      "version-control",
+      "protected-branch"
+    ]
+  },
+  {
+    "id": 694,
+    "category": "Version Control",
+    "difficulty": "medium",
+    "type": "true_false",
+    "question": "In Version Control, 'merge conflict' is best understood as situation where Git cannot automatically combine changes.",
+    "answer": "true",
+    "explanation": "Conflicts require manual resolution.",
+    "tags": [
+      "version-control",
+      "merge-conflict"
+    ]
+  },
+  {
+    "id": 695,
+    "category": "Version Control",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Version Control, what is the best description of commit signature?",
+    "options": [
+      "a Docker tag",
+      "a Linux file mode",
+      "cryptographic proof of commit author/source",
+      "a branch name"
+    ],
+    "answer": "cryptographic proof of commit author/source",
+    "explanation": "Signed commits support trust.",
+    "tags": [
+      "version-control",
+      "commit-signature"
+    ]
+  },
+  {
+    "id": 696,
+    "category": "Version Control",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Version Control, what is the best description of Git LFS?",
+    "options": [
+      "a Kubernetes scheduler",
+      "a log format",
+      "a TLS protocol",
+      "extension for managing large files outside normal Git objects"
+    ],
+    "answer": "extension for managing large files outside normal Git objects",
+    "explanation": "LFS helps with large binaries.",
+    "tags": [
+      "version-control",
+      "git-lfs"
+    ]
+  },
+  {
+    "id": 697,
+    "category": "Version Control",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Version Control, what is the best description of git bisect?",
+    "options": [
+      "binary search through history to find a bad commit",
+      "creating a new remote",
+      "formatting code",
+      "deleting tags"
+    ],
+    "answer": "binary search through history to find a bad commit",
+    "explanation": "Bisect speeds regression identification.",
+    "tags": [
+      "version-control",
+      "git-bisect"
+    ]
+  },
+  {
+    "id": 698,
+    "category": "Version Control",
+    "difficulty": "medium",
+    "type": "mcq",
+    "question": "In Version Control, what is the best description of trunk-based development?",
+    "options": [
+      "short-lived branches or direct work on main with frequent integration",
+      "long-lived isolated branches",
+      "manual releases only",
+      "no CI checks"
+    ],
+    "answer": "short-lived branches or direct work on main with frequent integration",
+    "explanation": "Trunk-based development supports CI.",
+    "tags": [
+      "version-control",
+      "trunk-based-development"
+    ]
+  },
+  {
+    "id": 699,
+    "category": "Version Control",
+    "difficulty": "hard",
+    "type": "true_false",
+    "question": "In Version Control, 'pull request review' is best understood as review process before merging changes.",
+    "answer": "true",
+    "explanation": "Reviews improve quality and shared knowledge.",
+    "tags": [
+      "version-control",
+      "pull-request-review"
+    ]
+  },
+  {
+    "id": 700,
+    "category": "Version Control",
+    "difficulty": "hard",
+    "type": "mcq",
+    "question": "In Version Control, what is the best description of semantic commit message?",
+    "options": [
+      "structured message that describes change intent",
+      "random text only",
+      "encrypted commit body",
+      "no message"
+    ],
+    "answer": "structured message that describes change intent",
+    "explanation": "Structured commits improve release notes and automation.",
+    "tags": [
+      "version-control",
+      "semantic-commit-message"
     ]
   }
 ]
