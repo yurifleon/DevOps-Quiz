@@ -1,10 +1,10 @@
 # DevOps Quiz
 
-A DevOps quiz application with 300 questions covering DevOps fundamentals, CI/CD, containers, Kubernetes, cloud, security, and more.
+A DevOps quiz application with 698 questions covering DevOps fundamentals, CI/CD, containers, Kubernetes, cloud, security, and more.
 
 ## Features
 
-- 300 DevOps questions across 16 categories
+- 698 DevOps questions across 16 categories
 - Random 20 questions per session
 - Category and difficulty filters
 - Multiple choice and true/false questions
@@ -59,7 +59,9 @@ Any static file server will work:
 
 ## Questions
 
-Questions are stored in `devops_questions.json`. To generate more questions:
+Questions are stored in `devops_questions.json`, which now contains the combined dataset used by the quiz.
+
+To generate a standalone question bank with the separate script:
 
 ```bash
 python generate_devops_bank_split.py -d devops_bank --seed 42
