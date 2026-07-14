@@ -4,7 +4,7 @@
 
 A static, single-page DevOps quiz app with no build step and no framework:
 - `index.html` — the entire UI: markup, inline `<style>`, and a `<script>` block with all app logic
-- `devops_questions.json` — the single source of truth for quiz content (498 questions across 17 categories); hand-edited directly, not generated
+- `devops_questions.json` — the single source of truth for quiz content (698 questions across 17 categories); hand-edited directly, not generated
 - `generate_devops_bank_split.py` — standalone script that defines its own question set and writes it as per-category files into an output directory; it does not read or write `devops_questions.json` and isn't part of the normal question-editing workflow
 
 ---
@@ -120,7 +120,7 @@ from typing import List, Optional, Dict, Any
 
 ## JSON File Editing Conventions
 
-When editing any JSON dataset files in this repo (especially `devops_questions.json`, `devops_questions_added_200.json`, and `devops_questions_plus_200.json`):
+When editing any JSON dataset files in this repo (especially `devops_questions.json`):
 
 - Keep files valid JSON: double-quoted keys/strings, no comments, and no trailing commas.
 - Preserve the existing indentation and array/object structure where possible to keep diffs readable.
