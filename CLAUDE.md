@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 All project files live in `AI-quiz/`, which has its own more detailed `CLAUDE.md`. Run all commands from `AI-quiz/`, not the repo root.
 
+This repository also includes root-level `AGENTS.md` and `.github/copilot-instructions.md` for agent guidance. Use `AI-quiz/AGENTS.md` as the primary project reference for code, schema, and content conventions.
+
 ## Commands
 
 ```bash

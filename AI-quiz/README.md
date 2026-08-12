@@ -61,6 +61,8 @@ Any static file server will work:
 
 Questions are stored in `devops_questions.json`, which now contains the combined dataset used by the quiz.
 
+For contributor conventions and editing guidance, see `AI-quiz/AGENTS.md`.
+
 To generate a standalone question bank with the separate script:
 
 ```bash

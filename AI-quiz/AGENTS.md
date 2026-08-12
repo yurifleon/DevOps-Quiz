@@ -22,6 +22,13 @@ python -m http.server 8000
 npm start   # runs: npx serve -s . -l $PORT
 ```
 
+### Agent-friendly summary
+
+- Run all commands from `AI-quiz/`, not the repo root.
+- Treat `AI-quiz/devops_questions.json` as the authoritative quiz dataset.
+- Do not change `AI-quiz/devops_questions.json` schema without also updating `AI-quiz/index.html`.
+- `AI-quiz/generate_devops_bank_split.py` is standalone and not part of normal quiz content updates.
+
 ### Running the Question Generator
 
 ```bash
